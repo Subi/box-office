@@ -1,0 +1,22 @@
+#navbar {
+    background-color: #222227;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.navContent {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-poppins);
+}
+
+
+.navContent span {
+    padding: 0 .5em 0 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #ffb525;
+}
