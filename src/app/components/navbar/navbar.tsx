@@ -6,8 +6,14 @@ export default function NavBar() {
     return (
         <nav id={styles.navbar}>
             <div className={styles.navContent}>
-                <span>Box Office</span>
-                <Image src={navLogo} alt='logo' width={33} height={33}/> 
+                <div className={styles.logoContainer}>
+                    <span className={styles.logoName}>Box Office</span>
+                    <Image src={navLogo} alt='logo' width={33} height={33}/>
+                </div>
+                <div className={styles.register}>
+                    <span>Sign up</span>
+                    <span>Login</span>
+                </div>
             </div>
         </nav>
     )

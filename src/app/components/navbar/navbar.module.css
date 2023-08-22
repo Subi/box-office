@@ -1,5 +1,6 @@
 #navbar {
-    background-color: #222227;
+    /* background-color: #222227; */
+    background-color: #14181c;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -9,14 +10,27 @@
 .navContent {
     width: 70%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     font-family: var(--font-poppins);
 }
 
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
 
-.navContent span {
+.logoName {
     padding: 0 .5em 0 0;
     font-size: 1.5em;
     font-weight: 300;
     color: #ffb525;
+}
+
+.register {
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-right: 10em;
 }

@@ -2,7 +2,7 @@
     padding-top: 4em;
     display: flex;
     justify-content: center;
-    width: 40%;
+    width: 50%;
 }
 
 .searchBar {
@@ -14,11 +14,10 @@
     text-indent: 2em;
     border-radius: 2em;
     padding: 1em 0;
-    background-color: #222227;
+    background-color: #14181c;
     border-radius: 2em;
     border: 1px solid black;
     border-image-source: linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
-    border-width: 2pt;
     border-image-slice: 1;
 }
 
@@ -37,3 +36,4 @@
     right: 2.8em;
     top: 1.3em;
 }
+
