@@ -5,18 +5,18 @@ import { useState } from "react"
 
 export interface ISearchedResultsList {
     movies: Movie[]
+    modalClosed: boolean
 }
 
 
-export default function SearchedResultsList({movies}:ISearchedResultsList) {
-    const [closed , isClosed] = useState<boolean>(false)
+export default function SearchedResultsList({movies , modalClosed}:ISearchedResultsList) {
 
     if(movies.length < 1) {
         return ""
     }
 
     return (
-        <section className={!closed ? `${styles.movieResultsContainer}` : `${styles.hidden}`}>
+        <section className={!modalClosed ? `${styles.movieResultsContainer}` : `${styles.hidden}`}>
         {movies.map(movie => {
             return (
                 <div className={styles.movieResult}>

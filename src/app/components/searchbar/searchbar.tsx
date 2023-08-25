@@ -8,11 +8,11 @@ import { Movie } from '@/app/api/movies/search/route';
 import SearchedResultsList from '../searchedResultsList/searchedResultsList';
 
 
-interface ISearch {
-    searchMovie(title:string):void
+interface SeachbarProps {
+    modalClosed: boolean
 }
 
-export default function SearchBar() {
+export default function SearchBar({modalClosed}:SeachbarProps) {
     const [input , setInput] = useState<string>("")
     const [searchedResults , setSearchedResults] = useState<Movie[]>([])
 
@@ -34,16 +34,13 @@ export default function SearchBar() {
     useEffect(() => {
     },[searchedResults])
 
-
-
-    
     return (
         <div className={styles.searchBarContainer}>
-            <input className={styles.searchBar} type='text' placeholder='Search for a movie or series' onChange={(e) => setInput(e.target.value)}/>
+            <input className={styles.searchBar} type='text' placeholder='Search for a movie or tv series' onChange={(e) => setInput(e.target.value)}/>
             <span className={styles.searchBarIcon}>
-                <Image src={searchBarIcon} alt='search_icon' height={20} width={20}/>
+                <Image src={searchBarIcon} alt='search_icon' height={18} width={18}/>
             </span>
-            <SearchedResultsList movies={searchedResults}/>
+            <SearchedResultsList movies={searchedResults} modalClosed={modalClosed}/>
         </div>
     )
 }

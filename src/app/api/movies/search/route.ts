@@ -9,12 +9,34 @@ export interface IResults {
     results: Movie[]
 }
 
+
+export interface Cast  {
+    adult: false
+    gender: number;
+    id: number
+    known_for_department: string
+    name: string
+    original_name: string
+    popularity: number
+    profile_path: string
+    cast_id: number
+    charachter: string
+    credit_id: string
+    order: number
+}
+
+export interface Crew extends Cast {
+    job: string
+}
+
+
 export type Movie = {
     id: number
     adult: boolean
     backdropPath: string
     genreIds: number[]
     original_language: string
+    runtime: number
     original_title: string
     overview: string
     popularity: number
@@ -27,54 +49,32 @@ export type Movie = {
         cast: Cast[]
         crew: Crew[]
     }
-}
-
-type Cast = {
-    adult: false
-    gender: number;
-    id: number
-    known_for_department: string
-    name: string
-    original_name: string
-    popularity: number
-    profile_path: string
-    cast_id: number
-    charachter: string
-    credit_id: string
-    order: number
+    tagline: string
+    production_companies: {
+        id: number
+        logo_path: string
+        name: string
+        origin_country:string
+    }[]
+    genres: {
+        id:number
+        name:string
+    }[]
 }
 
 
 
-type Crew = {
-    adult: false
-    gender: number;
-    id: number
-    known_for_department: string
-    name: string
-    original_name: string
-    popularity: number
-    profile_path: string
-    cast_id: number
-    charachter: string
-    credit_id: string
-    order: number
-    job: string
-}
 
 export async function GET(req:NextRequest , res:NextResponse ) {
-    
-
-
     const {searchParams} = new URL(req.url);
     const title: string | null =  searchParams.get('title')
 
     const response = await fetch(`${searchUrl}?query=${title}&language=en-US` , createOpts("get"))
     if(response.status != 200) {
+        console.error(`Error fetching user search query ${title} : ${response.status} : ${response.statusText}`)
         return NextResponse.json({"status": response.statusText , "code" : response.status})
     }
     const data:IResults =  await response.json()
-
     const moviesResults:Movie[] =  await getSearchedMoviesData(data.results)  
     return NextResponse.json({success: 200 , moviesResults})
 }

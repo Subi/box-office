@@ -1,0 +1,121 @@
+#moviesLanding {
+    width: 100%;
+    padding: 8em 0 8em 0 ;
+}
+
+.trendingSection {
+    margin: 0 auto;
+    width: 63%;
+    font-family: var(--font-poppins);
+}
+
+.sectionTitle {
+    width: 20%;
+    text-align: right;
+    font-size: 1.1em;
+    font-weight: 300 bold;
+    font-style: bold;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+}
+
+.trending {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 18%;
+    gap: var(--size-2);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.trending::-webkit-scrollbar {
+    display: none;
+}
+
+
+.mediaCard {
+    width: 175px;
+    height: 265px;
+    position: relative;
+    overflow: hidden;
+    border-radius: .8em;
+    border: 1px solid rgba(255, 255, 255, .1)
+}
+
+/* .mediaCard:hover .hoverData {
+    display: block;
+}
+
+
+.hoverData {
+    display: none;
+    width: 325px;
+    left: 13em;
+    bottom: 5em;
+    background-color: #0a1625;
+    z-index: 1;
+    color:white;
+    position: relative;
+} */
+/* 
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: .7em;
+}
+.header span {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.header p {
+    font-size: .9em;
+    font-weight: 200 bold;
+}
+
+.release {
+    font-size: .9em;
+    font-style: italic;
+    font-weight: 200 bold;
+    padding: 0 0 .4em  .4em;
+}
+
+.overview {
+    width: 100%;
+    font-weight: 200;
+    font-style: bold;
+    overflow: hidden;
+    padding-left: .5em;
+    text-indent: .5em;
+    margin-bottom: 1em;
+}
+
+.overview span {
+    letter-spacing: .1pt;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+} 
+
+.crew {
+    padding-left: .7em;
+    font-style: italic;
+    font-weight: 300;
+    font-size: .9em;
+}
+
+.genres {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    padding: .9em 0 .9em 0;
+}
+
+.genre {
+    background-color: rgba(255,181,37 , .5);
+    border-radius: 1em;
+    font-size: .75em;
+    padding: .2em .8em;
+} */
