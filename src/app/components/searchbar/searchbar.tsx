@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import useDebounce from '@/app/hooks/useDebounce';
 import { Movie } from '@/app/api/movies/search/route';
-import SearchedResultsList from '../searchedResultsList/searchedResultsList';
+import SearchedResults from '../searchResults/searchResults';
+
 
 
 interface SeachbarProps {
@@ -40,7 +41,7 @@ export default function SearchBar({modalClosed}:SeachbarProps) {
             <span className={styles.searchBarIcon}>
                 <Image src={searchBarIcon} alt='search_icon' height={18} width={18}/>
             </span>
-            <SearchedResultsList movies={searchedResults} modalClosed={modalClosed}/>
+            <SearchedResults movies={searchedResults} modalClosed={modalClosed}/>
         </div>
     )
 }

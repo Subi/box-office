@@ -1,8 +1,6 @@
 import { NextRequest , NextResponse } from "next/server";
 import {searchUrl , movieUrl} from '@/constants'
 import { createOpts } from "@/app/util/helper";
-import { get } from "http";
-import { moveEmitHelpers } from "typescript";
 
 export interface IResults {
     page: number
