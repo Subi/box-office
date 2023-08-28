@@ -1,6 +1,7 @@
 import { Movie } from "@/app/api/movies/search/route"
 import styles from './searchResults.module.css'
 import Image from "next/image"
+import Link from "next/link"
 
 export interface ISearchedResultsList {
     movies: Movie[]
@@ -19,6 +20,7 @@ export default function SearchedResultsList({movies , modalClosed}:ISearchedResu
         {movies.map(movie => {
             return (
                 <div className={styles.movieResult}>
+                <Link href={`/movie/${movie.id}`}>
                 <div className={styles.movieItem} key={movie.id}>
                     <div className={styles.poster}>
                         <Image
@@ -40,6 +42,7 @@ export default function SearchedResultsList({movies , modalClosed}:ISearchedResu
                         </div>
                     </div>
                 </div>
+                </Link>
             </div>
             )
         })}

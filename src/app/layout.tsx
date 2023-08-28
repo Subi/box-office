@@ -14,7 +14,7 @@ const poppins = Poppins(
 
 export const metadata: Metadata = {
   title: 'Box Office',
-  description: 'Share your love for films and discover new ones to love',
+  description: 'Share your love for films and discover new ones to love'
 }
 
 export default function RootLayout({
