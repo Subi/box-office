@@ -1,0 +1,79 @@
+.content {
+    padding-top: 4em;
+    font-family: var(--font-poppins);
+    width: 100%;
+}
+
+.contentTitle {
+    width: 7%;
+    font-size: 2.2em;
+    margin-bottom: 1.5em;
+    letter-spacing: 1pt
+}
+
+.contentTitle::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 1px;
+    border-bottom: 3px solid #FC4A78;
+}
+
+
+
+.contentScroller {
+    width: 97%;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 14%;
+    gap: var(--size-2);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+.contentScroller::-webkit-scrollbar {
+    display: none;
+}
+
+.castCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    width: 225px;
+}
+
+.castCardAvatar {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    position: relative;
+    overflow: hidden;
+}
+
+.castInfo {
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: .8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.castInfo span {
+    padding: .5em 0;
+}
+
+.castInfo span:first-child {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.castInfo span:last-child{
+    width: 80%;
+    font-size: 1.1em;
+    font-weight: 200 ;
+}

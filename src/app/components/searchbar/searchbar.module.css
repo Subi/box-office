@@ -1,0 +1,40 @@
+.searchBarContainer {
+    padding-top: 4em;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.searchBar {
+    width: 85%;
+    font-family: var(--font-poppins);
+    font-size: 1em;
+    font-weight: 300 bold;
+    color: rgba(255, 255, 255, .9);;
+    text-indent: 2em;
+    border-radius: 2em;
+    padding: 1em 0;
+    background-color: #14181c;
+    border-radius: 2em;
+    border: 1px solid black;
+    border-image-source: linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
+    border-width: 2pt;
+    border-image-slice: 1;
+}
+
+.searchBar::placeholder {
+    font-family: var(--font-poppins);
+    color: rgba(255 , 255 , 255 , .5);
+    font-weight: 200; 
+}
+
+.searchBar:focus{
+    outline: none;
+}
+
+.searchBarIcon {
+    position: relative;
+    right: 2.8em;
+    top: 1.3em;
+}
+

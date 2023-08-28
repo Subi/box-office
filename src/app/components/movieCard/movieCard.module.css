@@ -1,0 +1,8 @@
+.mediaCard {
+    width: 175px;
+    height: 265px;
+    position: relative;
+    overflow: hidden;
+    border-radius: .8em;
+    border: 1px solid rgba(255, 255, 255, .1)
+}

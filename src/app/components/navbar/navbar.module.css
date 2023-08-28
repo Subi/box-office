@@ -1,0 +1,45 @@
+#navbar {
+    /* background-color: #222227; */
+    background-color: #14181c;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+.navContent {
+    width: 63%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-poppins);
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoName {
+    padding: 0 .5em 0 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #ffb525;
+}
+
+.register {
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+
+.waitlist {
+    background-color :rgba(255,181,37 , .9);
+    padding: .4em .8em;
+    color: whitesmoke;
+    border-radius: .2em;
+    font-weight: 200 bold;
+    letter-spacing: .2pt;
+}
