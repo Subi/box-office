@@ -37,7 +37,7 @@ export default function SearchBar({modalClosed}:SeachbarProps) {
 
     return (
         <div className={styles.searchBarContainer}>
-            <input className={styles.searchBar} type='text' placeholder='Search for a movie or tv series' onChange={(e) => setInput(e.target.value)}/>
+            <input className={styles.searchBar} type='text' placeholder='Search for a movie' onChange={(e) => setInput(e.target.value)}/>
             <span className={styles.searchBarIcon}>
                 <Image src={searchBarIcon} alt='search_icon' height={18} width={18}/>
             </span>

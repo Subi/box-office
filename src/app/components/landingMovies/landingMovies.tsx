@@ -3,8 +3,6 @@ import styles from './landingMovies.module.css'
 import MovieCard from '../movieCard/movieCard'
 
 
-
-
 async function getTrendingMovies():Promise<Movie[]> {
     const res =  await fetch("http://localhost:3000/api/movies/trending" , {method:"GET" , cache: 'no-cache'})
     if(!res.ok) {

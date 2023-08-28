@@ -1,3 +1,5 @@
+import { movieUrl } from "@/constants"
+
 export interface IOptions {
     method: string
     headers: {
@@ -5,6 +7,7 @@ export interface IOptions {
         authorization:string 
     }
 }
+
 
 export const createOpts = (method:string):IOptions => {
     return {
@@ -15,3 +18,10 @@ export const createOpts = (method:string):IOptions => {
         }
     }
 }
+
+
+export const getMovieData = async (id:string | null):Promise<Response> => {
+    return await fetch(`${movieUrl}/${id}?append_to_response=credits,release_dates,videos` , createOpts("GET"))
+}
+
+

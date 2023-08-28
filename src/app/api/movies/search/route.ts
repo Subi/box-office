@@ -13,12 +13,13 @@ export interface Cast  {
     gender: number;
     id: number
     known_for_department: string
+    department:string
     name: string
     original_name: string
     popularity: number
     profile_path: string
     cast_id: number
-    charachter: string
+    character: string
     credit_id: string
     order: number
 }
@@ -38,8 +39,8 @@ export type Movie = {
     original_title: string
     overview: string
     popularity: number
-    poster_path: string
     release_date: string
+    poster_path: string
     title: string
     vote_average: number
     vote_count: number
@@ -58,8 +59,34 @@ export type Movie = {
         id:number
         name:string
     }[]
+    release_dates: {
+        results: releaseResult[]
+    }
+    videos: {
+        results: videoResult[]
+    } 
 }
 
+export type releaseResult = {
+    iso_3166_1: string
+    release_dates: {
+        certification: string
+    }[]
+}
+
+
+export type videoResult = {
+    iso_639_1?:string
+    iso_3166_1: string
+    name?: string
+    key?:string
+    site?:string
+    size?:number
+    type?:string
+    offical?:string
+    id?:string
+    published_at?:string
+}
 
 
 

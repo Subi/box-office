@@ -8,15 +8,17 @@ export default function NavBar() {
     return (
         <nav id={styles.navbar}>
             <div className={styles.navContent}>
+                <Link href={"/"}>
                 <div className={styles.logoContainer}>
                     <span className={styles.logoName}>Box Office</span>
                     <Image src={navLogo} alt='logo' width={33} height={33}/>
                 </div>
+                </Link>
                 {/* <SearchBar/> */}
                 <div className={styles.register}>
                     {/* <span>Sign up</span>
                     <span>Login</span> */}
-                    <Link className={styles.waitlist} href={"https://rnbwwv0ndy1.typeform.com/to/EYD74sa8"}>Join Waitlist</Link>
+                    <Link className={styles.waitlist} href={"https://form.typeform.com/to/EYD74sa8"}>Join Waitlist</Link>
                 </div>
             </div>
         </nav>
