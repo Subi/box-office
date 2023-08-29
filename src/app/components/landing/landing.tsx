@@ -31,9 +31,8 @@ export default function Landing(){
     return (
         <main id={styles.main} ref={mainRef}>
             <section id={styles.mainContent}>
-                {/* <h1>Share your love for movies and discover new ones to love.</h1> */}
                 <h1>Curate a watchlist with your creativity, share how the experience made you feel & discover new experiences to share</h1>
-                <span className={styles.quotes}> " The past is just a story we tell ourselves." - Samantha</span>
+                <span className={styles.quotes}> &quot;Theory Will Take You Only So Far.&quot; - Oppenheimer</span>
                 <SearchBar modalClosed={searchModalClosed}/>
             </section>
         </main>

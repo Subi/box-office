@@ -10,18 +10,16 @@ export interface ISearchedResultsList {
 
 
 export default function SearchedResultsList({movies , modalClosed}:ISearchedResultsList) {
-
     if(movies.length < 1) {
         return ""
     }
-
     return (
         <section className={!modalClosed ? `${styles.movieResultsContainer}` : `${styles.hidden}`}>
         {movies.map(movie => {
             return (
-                <div className={styles.movieResult}>
+                <div className={styles.movieResult} key={movie.id}>
                 <Link href={`/movie/${movie.id}`}>
-                <div className={styles.movieItem} key={movie.id}>
+                <div className={styles.movieItem}>
                     <div className={styles.poster}>
                         <Image
                           src={`https://www.themoviedb.org/t/p/original/${movie.poster_path}`} 
