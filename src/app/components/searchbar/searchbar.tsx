@@ -7,8 +7,6 @@ import useDebounce from '@/app/hooks/useDebounce';
 import { Movie } from '@/app/api/movies/search/route';
 import SearchedResults from '../searchResults/searchResults';
 
-
-
 interface SeachbarProps {
     modalClosed: boolean
 }
@@ -18,7 +16,6 @@ export default function SearchBar({modalClosed}:SeachbarProps) {
     const [searchedResults , setSearchedResults] = useState<Movie[]>([])
 
     const debouncedSearch: string | undefined  = useDebounce(input , 300)
-
 
     const searchMovie = async (title:string) => {
         const response = await fetch(`api/movies/search?title=${title}`)
