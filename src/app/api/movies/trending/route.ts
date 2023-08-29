@@ -2,9 +2,6 @@ import { createOpts } from "@/app/util/helper";
 import { trendingUrl } from "@/constants";
 import { NextRequest, NextResponse } from "next/server";
 import { IResults, Movie } from "../search/route";
-import { getMovieData } from "../route";
-
-
 
 
 export async function GET(req:NextRequest , res:NextResponse) {
