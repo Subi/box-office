@@ -1,6 +1,6 @@
 import { NextRequest , NextResponse } from "next/server";
 import { getMovieData } from "@/app/util/helper";
-import { Movie } from "../search/route";
+import { Movie } from "../movies/search/route";
 
 
 export async function GET(req:NextRequest , res:NextResponse ) {
