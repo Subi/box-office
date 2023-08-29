@@ -19,7 +19,7 @@ export default function MovieContent({casts}:MovieContentProps) {
             <div className={styles.contentScroller}>
                 {casts.map(cast => {
                     return (
-                        <div className={styles.castCard}>
+                        <div className={styles.castCard} key={cast.id}>
                             <div className={styles.castCardAvatar}>
                             <Image
                             src={`https://www.themoviedb.org/t/p/original/${cast.profile_path}`}

@@ -17,7 +17,7 @@ interface MovieResponse {
 }
 
 async function getmovieDetails(id:string):Promise<MovieResponse> {
-    const res = await fetch(`http://localhost:3000/api/movies/movie?id=${id}` , {method:"GET" , cache: "no-cache"})
+    const res = await fetch(`http://localhost:3000/api/movie?id=${id}` , {method:"GET" , cache: "no-cache"})
     if(!res.ok) {
         throw new Error(`Failed fetching ${id} movie details`)
     }
@@ -78,7 +78,7 @@ export default async function Page({params}:MoviePageProps){
                         {data.genres.map((genre , index) => {
                             if(index < 2) {
                                 return (
-                                    <span className={styles.genre}>{genre.name}</span>
+                                    <span className={styles.genre} key={index}>{genre.name}</span>
                                 )
                             }
                         })}
