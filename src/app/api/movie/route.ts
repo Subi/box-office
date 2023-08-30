@@ -8,7 +8,7 @@ export async function GET(req:NextRequest , res:NextResponse ) {
     const {searchParams} = new URL(req.url)
     const id = searchParams.get('id')
 
-    const response  = await fetch(`${movieUrl}/${id}?append_to_response=credits,release_dates,videos` , createOpts("GET"))
+    const response  = await fetch(`${movieUrl}/${id}?append_to_response=credits,release_dates,videos,images` , createOpts("GET"))
     if(response.status != 200) {
         console.error(`Error fetching movie details ${id} : ${response.status} : ${response.statusText}`)
         return NextResponse.json({"status": response.statusText , "code" : response.status})

@@ -1,4 +1,4 @@
-import { Cast, Movie } from '@/app/api/movies/search/route'
+import { Cast, Movie } from '@/types'
 import styles from './movieContent.module.css'
 import Image from 'next/image'
 
