@@ -53,8 +53,8 @@ export default async function Page({params}:MoviePageProps){
                 <Image
                 src={`https://www.themoviedb.org/t/p/original/${data.poster_path}`}
                 alt={data.title}
-                layout='fill'
-                objectFit='cover'
+                fill={true}
+                unoptimized
                 quality={100}
                 />
                 </div>
