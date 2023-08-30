@@ -9,13 +9,19 @@ interface MovieContentProps {
 
 export default function MovieContent({casts}:MovieContentProps) {
     return (
-        <section className={styles.content}>
-            <header>
-                <nav id={styles.contentNav}></nav>
-            </header>
-            <div className={styles.contentTitle}>
-                <span>Cast</span>
+        <section className={styles.contentContainer}>
+            <div className={styles.contentSidebar}>
+                
             </div>
+            <div className={styles.contentOverview}>
+                <nav className={styles.overviewNav}>
+                    <ul>
+                        <li className={styles.selected}>Cast</li>
+                        <li>Details</li>
+                        <li>Videos</li>
+                        <li>Review</li>
+                    </ul>
+                </nav>
             <div className={styles.contentScroller}>
                 {casts.map(cast => {
                     return (
@@ -23,10 +29,10 @@ export default function MovieContent({casts}:MovieContentProps) {
                             <div className={styles.castCardAvatar}>
                             <Image
                             src={`https://www.themoviedb.org/t/p/original/${cast.profile_path}`}
-                             layout='fill'
-                             objectFit='cover'
+                             fill={true}
                              alt={cast.name}
                              quality={100}
+                             unoptimized={false}
                             />
                             </div>
                             <div className={styles.castInfo}>
@@ -36,6 +42,7 @@ export default function MovieContent({casts}:MovieContentProps) {
                         </div>
                     )
                 }).slice(0 , 15)}
+            </div>
             </div>
         </section>
     )
