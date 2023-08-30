@@ -13,8 +13,8 @@ const jobs = {
     director: "Directing"
 }
 
-const videos = {
-    officalTrailer: "Offical Trailer"
+const videoTypes = {
+    trailer: "Offical Trailer"
 }
 
 export {
@@ -23,5 +23,5 @@ export {
     trendingUrl,
     locale,
     jobs,
-    videos
+    videoTypes
 }

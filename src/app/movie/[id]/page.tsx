@@ -17,7 +17,7 @@ interface MovieResponse {
 }
 
 async function getmovieDetails(id:string):Promise<MovieResponse> {
-    const res = await fetch(`http://localhost:3000/api/movie?id=${id}` , {method:"GET" , cache: "no-cache"})
+    const res = await fetch(`http://localhost:3000/api/movie?id=${id}` , {method:"GET"})
     if(!res.ok) {
         throw new Error(`Failed fetching ${id} movie details`)
     }

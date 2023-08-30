@@ -4,7 +4,7 @@ import {searchBarIcon} from '@/images';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import useDebounce from '@/app/hooks/useDebounce';
-import { Movie } from '@/app/api/movies/search/route';
+import { Movie } from '@/types'
 import SearchedResults from '../searchResults/searchResults';
 
 interface SeachbarProps {
@@ -18,9 +18,9 @@ export default function SearchBar({modalClosed}:SeachbarProps) {
     const debouncedSearch: string | undefined  = useDebounce(input , 300)
 
     const searchMovie = async (title:string) => {
-        const response = await fetch(`api/movies/search?title=${title}`)
-        const {moviesResults} =  await response.json()       
-        setSearchedResults(moviesResults)
+        const response = await fetch(`http://localhost:3000/api/movies/search?title=${title}`)
+        const {searchedMovieResults} =  await response.json()       
+        setSearchedResults(searchedMovieResults)
     }
 
     useEffect(() => {

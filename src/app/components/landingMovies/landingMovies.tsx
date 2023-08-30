@@ -1,9 +1,9 @@
-import { Movie } from '@/app/api/movies/search/route'
+import { Movie } from '@/types';
 import styles from './landingMovies.module.css'
 import MovieCard from '../movieCard/movieCard'
 
 async function getTrendingMovies():Promise<Movie[]> {
-    const res =  await fetch("http://localhost:3000/api/movies/trending" , {method:"GET" , cache: 'no-cache'})
+    const res =  await fetch("http://localhost:3000/api/movies/trending" , {method:"GET" , next:{revalidate: 3600}})
     if(!res.ok) {
         throw new Error("Failed fetching trending movies")
     }

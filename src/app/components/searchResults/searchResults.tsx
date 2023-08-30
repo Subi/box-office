@@ -1,4 +1,4 @@
-import { Movie } from "@/app/api/movies/search/route"
+import { Movie } from '@/types'
 import styles from './searchResults.module.css'
 import Image from "next/image"
 import Link from "next/link"
