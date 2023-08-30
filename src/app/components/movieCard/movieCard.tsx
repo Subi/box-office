@@ -7,7 +7,6 @@ export interface MovieCardProps {
     movie: Movie
 }
 
-
 export default function MovieCard({movie}:MovieCardProps) {
     return (
         <div className={styles.mediaCard} >

@@ -3,8 +3,8 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { unfavorited , playIcon } from '@/images';
 import MovieContent from '@/app/components/movieContent/movieContent';
-import { jobs, locale, videos } from '@/constants';
-import { Movie } from '@/app/api/movies/search/route';
+import { jobs, locale, videoTypes } from '@/constants';
+import { Movie } from '@/types'
 import Link from 'next/link';
 
 interface MoviePageProps {
@@ -44,7 +44,6 @@ export default async function Page({params}:MoviePageProps){
     const getTrailerUrl = ()  => {
         return data.videos.results.find(video => video.name === "Official Trailer")?.key 
     }
-
 
     return (
         <>
@@ -120,6 +119,10 @@ export default async function Page({params}:MoviePageProps){
                     </div>
                 </div>
             </section>
+            <div className={styles.backdropImageContainer}>
+                <img style={{backgroundImage: `url(https://www.themoviedb.org/t/p/original/${data.backdrop_path})`}}/>
+            </div>
+            <div className={styles.backdropMask}></div>
             <MovieContent casts={data.credits.cast}/>
         </main>
         </>

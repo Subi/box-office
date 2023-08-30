@@ -1,7 +1,7 @@
 export type Movie = {
     id: number
     adult: boolean
-    backdropPath: string
+    backdrop_path: string
     genreIds: number[]
     original_language: string
     runtime: number
@@ -28,6 +28,17 @@ export type Movie = {
         id:number
         name:string
     }[]
+    images: {
+        backdrops: {
+            aspect_ratio:number
+            height:number
+            iso_639_1:string
+            file_path:string
+            vote_average:string
+            vote_count:11
+            width:number
+        }[]
+    }
     release_dates: {
         results: releaseResult[]
     }
