@@ -15,10 +15,10 @@ export default function SearchBar({modalClosed}:SeachbarProps) {
     const [input , setInput] = useState<string>("")
     const [searchedResults , setSearchedResults] = useState<Movie[]>([])
 
-    const debouncedSearch: string | undefined  = useDebounce(input , 300)
+    const debouncedSearch: string | undefined  = useDebounce(input , 150)
 
     const searchMovie = async (title:string) => {
-        const response = await fetch(`http://localhost:3000/api/movies/search?title=${title}`)
+        const response = await fetch(`api/movies/search?title=${title}`)
         const {searchedMovieResults} =  await response.json()       
         setSearchedResults(searchedMovieResults)
     }
