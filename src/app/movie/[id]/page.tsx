@@ -3,21 +3,17 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import { unfavorited , playIcon } from '@/images';
 import MovieContent from '@/app/components/movieContent/movieContent';
-import { jobs, locale, videoTypes } from '@/constants';
+import { jobs, locale, movieUrl, videoTypes } from '@/constants';
 import { Movie } from '@/types'
 import Link from 'next/link';
+import { createOpts } from '@/app/util/helper';
 
 interface MoviePageProps {
     params: { id:string}
 }
 
-interface MovieResponse {
-    success: string
-    data: Movie
-}
-
-async function getmovieDetails(id:string):Promise<MovieResponse> {
-    const res = await fetch(`http://localhost:3000/api/movie?id=${id}` , {method:"GET"})
+async function getmovieDetails(id:string):Promise<Movie> {
+    const res = await fetch(`${movieUrl}/${id}?append_to_response=credits,release_dates,videos,images` , createOpts("GET"))
     if(!res.ok) {
         throw new Error(`Failed fetching ${id} movie details`)
     }
@@ -25,7 +21,7 @@ async function getmovieDetails(id:string):Promise<MovieResponse> {
 }
 
 export default async function Page({params}:MoviePageProps){
-    const {data}:MovieResponse =  await getmovieDetails(params.id)
+    const data:Movie =  await getmovieDetails(params.id)
 
     const getMovieReleaseRating = (iso:string):string | undefined => {
         return data.release_dates.results.find(result => result.iso_3166_1 === iso)?.release_dates.find(release => release.certification)?.certification
