@@ -3,8 +3,13 @@ import styles from './navbar.module.css';
 import {navLogo} from '@/images';
 import SearchBar from '../searchbar/searchbar';
 import Link from 'next/link';
+import { currentUser } from '@clerk/nextjs';
+import { User } from '@clerk/nextjs/api';
+import LoggedIn from '../loggedIn/loggedIn';
 
-export default function NavBar() {
+export default async function NavBar() {
+    const user: User | null = await currentUser()
+
     return (
         <nav id={styles.navbar}>
             <div className={styles.navContent}>
@@ -14,11 +19,13 @@ export default function NavBar() {
                     <Image src={navLogo} alt='logo' width={33} height={33}/>
                 </div>
                 </Link>
-                {/* <SearchBar/> */}
+                {/* <SearchBar/> */}  
                 <div className={styles.register}>
-                    {/* <span>Sign up</span>
-                    <span>Login</span> */}
-                    <Link className={styles.waitlist} href={"https://form.typeform.com/to/EYD74sa8"}>Join Waitlist</Link>
+                    <LoggedIn user={user}/>
+                    {/* <span className={styles.signup}>Sign up</span>
+                    <Link href={"/sign-in"}>
+                    <button className={styles.login}>Login</button>
+                    </Link> */}
                 </div>
             </div>
         </nav>

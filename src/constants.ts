@@ -14,7 +14,7 @@ const jobs = {
 }
 
 const videoTypes = {
-    trailer: "Offical Trailer"
+    trailer: "Official Trailer"
 }
 
 export {

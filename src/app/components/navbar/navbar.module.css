@@ -1,5 +1,4 @@
 #navbar {
-    /* background-color: #222227; */
     background-color: #14181c;
     width: 100%;
     display: flex;
@@ -28,13 +27,13 @@
 }
 
 .register {
-    width: 12%;
     display: flex;
     justify-content: space-between;
     align-items:center;
+    width: 30%;
 }
 
-
+/* 
 .waitlist {
     background-color :rgba(255,181,37 , .9);
     padding: .4em .8em;
@@ -42,4 +41,39 @@
     border-radius: .2em;
     font-weight: 200 bold;
     letter-spacing: .2pt;
+}
+ */
+
+.signup {
+ cursor: pointer;
+ margin-right: 4em;
+}
+
+.signup:hover::after {
+    width: 100%;
+}
+
+.signup::after {
+    content: "";
+    width: 0;
+    display: block;
+    padding-top: .2em;
+    border-bottom: 2px solid rgba(255,181,37 , .9);
+    transition: width .2s ease-in-out
+}
+
+
+.login {
+    background-color: transparent;
+    padding: .3em 1em;
+    color: whitesmoke;
+    border-radius: .2em;
+    border: 1px solid #7275a6;
+    font-weight: 300;
+    font-size: 1em;
+    letter-spacing: 1pt;
+}
+
+.login:active {
+    transform: translateY(.1em);
 }

@@ -1,7 +1,9 @@
+import { ClerkProvider, useAuth, useUser } from '@clerk/nextjs'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import NavBar from './components/navbar/navbar'
+import { getAuth } from '@clerk/nextjs/server'
 
 const poppins = Poppins(
   {
@@ -10,7 +12,6 @@ const poppins = Poppins(
   variable: "--font-poppins"
   }
 )
-
 
 export const metadata: Metadata = {
   title: 'Box Office',
@@ -23,12 +24,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en" className={poppins.variable}>
       <body>
         <NavBar/>
           {children}
         </body>
     </html>
+    </ClerkProvider>
   )
   }
 
