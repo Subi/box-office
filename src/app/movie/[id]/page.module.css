@@ -7,9 +7,9 @@
 .backdropImageContainer {
     position: absolute;
     width: 900px;
-    height: 575px;
+    height: 450px;
     right: 12%;
-    top: 10em;
+    top: 13em;
     z-index: 0;
     border: none;
 }
@@ -25,9 +25,9 @@
 .backdropMask {
     position: absolute;
     width: 900px;
-    height: 575px;
+    height: 450px;
     right: 12%;
-    top: 10em;
+    top: 13em;
     z-index: 0;
     background:
      linear-gradient(90deg, transparent,  60%, #14181c),
