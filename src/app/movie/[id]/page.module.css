@@ -6,10 +6,10 @@
 
 .backdropImageContainer {
     position: absolute;
-    width: 850px;
-    height: 500px;
+    width: 900px;
+    height: 575px;
     right: 12%;
-    top: 12em;
+    top: 10em;
     z-index: 0;
     border: none;
 }
@@ -24,10 +24,10 @@
 
 .backdropMask {
     position: absolute;
-    width: 850px;
-    height: 500px;
+    width: 900px;
+    height: 575px;
     right: 12%;
-    top: 12em;
+    top: 10em;
     z-index: 0;
     background:
      linear-gradient(90deg, transparent,  60%, #14181c),
@@ -48,13 +48,13 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding: .5em 0 0 3em;
+    padding-left: 3em;
     font-family: var(--font-poppins);
 }
 
 .moviePosterCard{
-    min-height: 500px;
-    min-width: 350px;
+    height: 475px;
+    width: 385px;
     position: relative;
     overflow: hidden;
     border-radius: 1em;
@@ -62,8 +62,8 @@
 }
 
 .movieDetails header {
-    width: 80%;
-    padding-bottom: .25em;
+    width: 100%;
+    padding-bottom: .5em;
     font-size: 2.5em;
     font-weight: bold;
 }
@@ -79,7 +79,7 @@
     display: flex;
     font-weight: 300;
     font-size: 1.1em;
-    padding-bottom: 2em;
+    padding-bottom: 1.5em;
     align-items: center;
 }
 
@@ -87,18 +87,16 @@
     display: flex;
     justify-content: space-between;
     width: 25%;
-    font-weight: 200;
+    font-weight: 300;
     align-items: center;
 }
 
 .releaseInfo span:last-child {
-    border: 1px solid white;
-    padding: .1em .6em;
     font-weight: bold;
 }
 
 .genres {
-    padding-left: 2em;
+    padding: 0 0 .1em 2em;
 }
 
 .genre {
@@ -111,11 +109,11 @@
 
 .overview {
     width: 90%;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
 }
 
 .crew {
-    padding-top: 1.5em
+    padding-top: 1em
 }
 
 .crew ul {
@@ -128,14 +126,14 @@
 }
 
 .actionButtons {
-    width: 33%;
+    width: 35%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .actionButton {
-    font-size: 1.1em;
+    font-size: .9em;
     background-color: transparent;
     padding: .4em .7em;
     font-weight: 200 bold;

@@ -86,8 +86,8 @@ export default async function Page({params}:MoviePageProps){
                             <Image
                             alt='favorited'
                             src={unfavorited}
-                            width={30}
-                            height={30}
+                            width={25}
+                            height={25}
                             />
                         </div>
                         </Link>
@@ -96,11 +96,12 @@ export default async function Page({params}:MoviePageProps){
                             <Image
                             alt='play trailer'
                             src={playIcon}
-                            width={30}
-                            height={30}
+                            width={25}
+                            height={25}
                             />
                         </div>
                         </Link>
+                        <span>Play Trailer</span>
                     </div>
                     <span style={{fontStyle: 'italic' , padding: '2em 0' }}>{data.tagline}</span>
                     <div className={styles.overview}>
@@ -109,7 +110,7 @@ export default async function Page({params}:MoviePageProps){
                     </div>
                     <div className={styles.crew}>
                         <ul>
-                            <li>Director : {getCrew(jobs.director)}</li>
+                            <li>Director : {getCrew(jobs.director)} </li>
                             <li>Writer : {getCrew(jobs.writers)}</li>
                         </ul>
                     </div>
