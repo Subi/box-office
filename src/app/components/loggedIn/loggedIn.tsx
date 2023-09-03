@@ -1,13 +1,19 @@
+"use client"
 import Image from "next/image"
 import { downArrow , plusIcon} from "@/images"
 import styles from './loggedIn.module.css'
-import { User } from "@clerk/nextjs/server"
+import {useClerk} from '@clerk/clerk-react'
+import {WithUserProp} from '@clerk/clerk-react'
+
+
 
 interface LoggedInProps {
-    user: User | null
+    image: string
 }
 
-export default function LoggedIn({user}:LoggedInProps){
+export default function LoggedIn({image}:LoggedInProps){
+    console.log("here")
+    const {signOut} = useClerk()
     return (
         <div style={{display: "flex" , alignItems: "center" , width: "100%" , justifyContent: "right"}}>
             <div style={{display: "flex"}}>
@@ -18,7 +24,7 @@ export default function LoggedIn({user}:LoggedInProps){
             </div>
             <div className={styles.userAvatar}>
             <Image 
-            src={String(user?.imageUrl)} 
+            src={image} 
             alt={"user image"} 
             height={38} 
             width={38}
@@ -30,6 +36,7 @@ export default function LoggedIn({user}:LoggedInProps){
                     <a>Profile</a>
                     <a>Watchlist</a>
                     <a>Settings</a>
+                    <a onClick={() => signOut()}>Log out</a>
                 </div>
             </div>
             </div>

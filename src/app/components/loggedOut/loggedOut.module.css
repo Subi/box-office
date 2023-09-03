@@ -2,23 +2,23 @@
     cursor: pointer;
     margin-right: 4em;
     padding-top: .2em;
-   }
+}
    
-   .signup:hover::after {
+.signup:hover::after {
        width: 100%;
-   }
+}
    
-   .signup::after {
+.signup::after {
        content: "";
        width: 0;
        display: block;
        padding-top: .2em;
        border-bottom: 2px solid rgba(255,181,37 , .9);
        transition: width .2s ease-in-out
-   }
+}
    
    
-   .login {
+.login {
        background-color: transparent;
        padding: .3em 1em;
        color: whitesmoke;
@@ -27,8 +27,8 @@
        font-weight: 300;
        font-size: 1em;
        letter-spacing: 1pt;
-   }
+}
    
-   .login:active {
+.login:active {
        transform: translateY(.1em);
-   }
+}

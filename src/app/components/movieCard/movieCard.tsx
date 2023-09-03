@@ -9,15 +9,15 @@ export interface MovieCardProps {
 
 export default function MovieCard({movie}:MovieCardProps) {
     return (
-        <div className={styles.mediaCard} >
         <Link href={`/movie/${movie.id}`}>
+        <div className={styles.mediaCard} >
         <Image
         src={`https://www.themoviedb.org/t/p/original/${movie.poster_path}`}
         alt={movie.title}
-        fill={true}
-        priority
+        fill
+        sizes="(max-width: 176px) 100vw , 150px"
        />
-        </Link>
         </div>
+        </Link>
     )
 }

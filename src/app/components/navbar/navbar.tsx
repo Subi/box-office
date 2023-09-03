@@ -1,15 +1,15 @@
+"use client"
 import Image from 'next/image';
 import styles from './navbar.module.css';
 import {navLogo} from '@/images';
 import SearchBar from '../searchbar/searchbar';
 import Link from 'next/link';
-import { currentUser } from '@clerk/nextjs';
-import { User } from '@clerk/nextjs/api';
+import { useUser } from '@clerk/nextjs';
 import LoggedIn from '../loggedIn/loggedIn';
 import LoggedOut from '../loggedOut/loggedOut';
 
-export default async function NavBar() {
-    const user: User | null = await currentUser()
+export default function NavBar() {
+    const {isSignedIn , user} = useUser()
 
     return (
         <>
@@ -23,7 +23,7 @@ export default async function NavBar() {
                 </Link>
                 {/* <SearchBar/> */}  
                 <div className={styles.register}>
-                    {!user ? <LoggedOut/> : <LoggedIn user={user}/>}
+                    {!isSignedIn ? <LoggedOut/> : <LoggedIn image={user.imageUrl}/>}
                 </div>
             </div>
         </nav>
