@@ -8,8 +8,8 @@ const nextConfig = {
                 port: '',
             },
             {
-                protocol: 'http',
-                hostname: "img.cleark.com",
+                protocol: 'https',
+                hostname: "img.clerk.com",
                 port: '',
             },
             {

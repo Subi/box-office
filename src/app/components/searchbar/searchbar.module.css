@@ -17,7 +17,9 @@
     background-color: #14181c;
     border-radius: 2em;
     border: 1px solid black;
-    border-image-source: linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
+    border-image: linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
+    -webkit-border-image:  linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
+    -moz-border-image:  linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
     border-width: 2pt;
     border-image-slice: 1;
 }

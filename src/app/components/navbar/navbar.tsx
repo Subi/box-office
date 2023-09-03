@@ -6,11 +6,13 @@ import Link from 'next/link';
 import { currentUser } from '@clerk/nextjs';
 import { User } from '@clerk/nextjs/api';
 import LoggedIn from '../loggedIn/loggedIn';
+import LoggedOut from '../loggedOut/loggedOut';
 
 export default async function NavBar() {
     const user: User | null = await currentUser()
 
     return (
+        <>
         <nav id={styles.navbar}>
             <div className={styles.navContent}>
                 <Link href={"/"}>
@@ -21,13 +23,11 @@ export default async function NavBar() {
                 </Link>
                 {/* <SearchBar/> */}  
                 <div className={styles.register}>
-                    <LoggedIn user={user}/>
-                    {/* <span className={styles.signup}>Sign up</span>
-                    <Link href={"/sign-in"}>
-                    <button className={styles.login}>Login</button>
-                    </Link> */}
+                    {!user ? <LoggedOut/> : <LoggedIn user={user}/>}
                 </div>
             </div>
         </nav>
+        </>
+
     )
 }
