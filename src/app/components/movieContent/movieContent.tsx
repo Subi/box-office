@@ -1,4 +1,5 @@
-import { Cast, Movie } from '@/types'
+import { Cast} from '@/types'
+import { blankProfile } from '@/images'
 import styles from './movieContent.module.css'
 import Image from 'next/image'
 
@@ -17,7 +18,6 @@ export default function MovieContent({casts}:MovieContentProps) {
                 <nav className={styles.overviewNav}>
                     <ul>
                         <li className={styles.selected}>Cast</li>
-                        <li>Details</li>
                         <li>Videos</li>
                         <li>Review</li>
                     </ul>
@@ -28,11 +28,11 @@ export default function MovieContent({casts}:MovieContentProps) {
                         <div className={styles.castCard} key={cast.id}>
                             <div className={styles.castCardAvatar}>
                             <Image
-                            src={`https://www.themoviedb.org/t/p/original/${cast.profile_path}`}
+                            src={`https://image.tmdb.org/t/p/original/${cast.profile_path}`}
                              fill={true}
                              alt={cast.name}
                              quality={100}
-                             unoptimized={false}
+                             priority
                             />
                             </div>
                             <div className={styles.castInfo}>

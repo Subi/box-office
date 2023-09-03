@@ -13,17 +13,18 @@
 .contentOverview {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 74%;
 }
 
 .overviewNav {
     display: flex;
     margin-left: 2em;
-    width: 50%;
+    width: 25%;
 }
 
 .overviewNav ul {
-    font-size: 1.2em;
+    font-size: 1em;
+    letter-spacing: .2pt;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -87,15 +88,20 @@
 }
 
 .castCardAvatar {
-    height: 150px;
-    width: 150px;
+    height: 145px;
+    width: 145px;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
 }
 
+.castCardAvatar img {
+    height: 100%;
+    width: 100%;
+}
+
 .castInfo {
-    width: 80%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -109,12 +115,12 @@
 }
 
 .castInfo span:first-child {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
 }
 
 .castInfo span:last-child{
     width: 80%;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 200 ;
 }

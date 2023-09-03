@@ -42,7 +42,7 @@ export default async function Page({params}:MoviePageProps){
     }
 
     const getTrailerUrl = ()  => {
-        return data.videos.results.find(video => video.name === "Official Trailer")?.key 
+        return data.videos.results.find(video => video.name === videoTypes.trailer)?.key 
     }
 
     return (
@@ -51,7 +51,7 @@ export default async function Page({params}:MoviePageProps){
             <section className={styles.movieDetailsContainer}>
                 <div className={styles.moviePosterCard}>
                 <Image
-                src={`https://www.themoviedb.org/t/p/original/${data.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
                 alt={data.title}
                 fill={true}
                 unoptimized

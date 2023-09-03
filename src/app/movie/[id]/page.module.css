@@ -1,6 +1,6 @@
 #main { 
     width: 75%;
-    margin: 5em  auto 0 auto;
+    margin: 8em  auto 0 auto;
     height: 100%;
 }
 
@@ -8,8 +8,8 @@
     position: absolute;
     width: 850px;
     height: 500px;
-    right: 0;
-    top: 8em;
+    right: 12%;
+    top: 12em;
     z-index: 0;
     border: none;
 }
@@ -26,13 +26,14 @@
     position: absolute;
     width: 850px;
     height: 500px;
-    right: 0;
-    top: 8em;
+    right: 12%;
+    top: 12em;
     z-index: 0;
     background:
-    linear-gradient(360deg, transparent,  90%, #14181c),
+     linear-gradient(90deg, transparent,  60%, #14181c),
      linear-gradient(180deg, transparent,  80%, #14181c),
-     linear-gradient(270deg, transparent,  60%, #14181c);
+     linear-gradient(270deg, transparent,  60%, #14181c),
+     linear-gradient(360deg, transparent,  90%, #14181c);
 }
 
 /* Movie details */
@@ -45,6 +46,7 @@
 
 .movieDetails {
     display: flex;
+    width: 80%;
     flex-direction: column;
     padding: .5em 0 0 3em;
     font-family: var(--font-poppins);
@@ -60,13 +62,14 @@
 }
 
 .movieDetails header {
-    width: 90%;
+    width: 70%;
+    padding-bottom: .25em;
     font-size: 2.5em;
     font-weight: bold;
 }
 
 .year {
-    padding-left: .2em;
+    padding-left: 1em;
     font-weight: 200;
     font-style: italic;
     color: rgba(255, 255, 255, .5);
@@ -74,7 +77,6 @@
 
 .movieInfo {
     display: flex;
-    width: 75%;
     font-weight: 300;
     font-size: 1.1em;
     padding-bottom: 2em;
@@ -85,12 +87,18 @@
     display: flex;
     justify-content: space-between;
     width: 25%;
-    font-weight: 200 bold;
+    font-weight: 200;
+    align-items: center;
+}
+
+.releaseInfo span:last-child {
+    border: 1px solid white;
+    padding: .1em .6em;
+    font-weight: bold;
 }
 
 .genres {
     padding-left: 2em;
-    width: 40%;
 }
 
 .genre {
@@ -120,7 +128,7 @@
 }
 
 .actionButtons {
-    width: 27%;
+    width: 33%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,6 +147,7 @@
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .25s ease-out;
+    cursor: pointer;
 }
 
 .actionButton:hover {
