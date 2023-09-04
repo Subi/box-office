@@ -1,6 +1,6 @@
 #main { 
     width: 75%;
-    margin: 8em  auto 0 auto;
+    margin: 6em  auto 0 auto;
     height: 100%;
 }
 
@@ -9,8 +9,8 @@
     width: 900px;
     height: 450px;
     right: 12%;
-    top: 13em;
-    z-index: 0;
+    top: 10em;
+    z-index: -0;
     border: none;
 }
 
@@ -27,7 +27,7 @@
     width: 900px;
     height: 450px;
     right: 12%;
-    top: 13em;
+    top: 10em;
     z-index: 0;
     background:
      linear-gradient(90deg, transparent,  60%, #14181c),
@@ -53,8 +53,8 @@
 }
 
 .moviePosterCard{
-    height: 475px;
-    width: 385px;
+    height: 490px;
+    width: 400px;
     position: relative;
     overflow: hidden;
     border-radius: 1em;
@@ -110,10 +110,11 @@
 .overview {
     width: 90%;
     padding-bottom: 1em;
+    font-weight: 200;
 }
 
 .crew {
-    padding-top: 1em
+    padding-top: .5em
 }
 
 .crew ul {
