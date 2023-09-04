@@ -1,7 +1,6 @@
 .signup {
     cursor: pointer;
     margin-right: 4em;
-    padding-top: .2em;
 }
    
 .signup:hover::after {
@@ -23,9 +22,9 @@
        padding: .3em 1em;
        color: whitesmoke;
        border-radius: .2em;
-       border: 1px solid #7275a6;
+       border: 1px solid rgba(255,181,37 , .9);
        font-weight: 300;
-       font-size: 1em;
+       font-size: .9em;
        letter-spacing: 1pt;
 }
    
