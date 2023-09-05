@@ -2,11 +2,9 @@ const searchUrl = 'https://api.themoviedb.org/3/search/movie'
 const movieUrl = `https://api.themoviedb.org/3/movie/`
 const trendingUrl = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US'
 
-
 const locale = {
     us: "US"
 }
-
 const jobs = {
     producer: "Producer",
     writers:  "Writing",
@@ -17,11 +15,19 @@ const videoTypes = {
     trailer: "Official Trailer"
 }
 
+
+const navigationLinks = [
+    "overview",
+    "watchlist",
+    "favorites"
+]
+
 export {
     searchUrl,
     movieUrl,
     trendingUrl,
     locale,
     jobs,
-    videoTypes
+    videoTypes,
+    navigationLinks
 }

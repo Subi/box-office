@@ -32,7 +32,7 @@ export default function MovieContent({casts}:MovieContentProps) {
                              fill={true}
                              alt={cast.name}
                              quality={100}
-                             priority
+                             style={{objectFit: "cover" , objectPosition: "50% 10%"}}
                             />
                             </div>
                             <div className={styles.castInfo}>

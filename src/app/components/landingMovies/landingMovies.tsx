@@ -5,7 +5,7 @@ import { trendingUrl } from '@/constants';
 import { createOpts } from '@/app/util/helper';
 
 
-async function  getTrendingMovies(){
+async function  getTrendingMovies(){ // return type value here 
     const res = await fetch(trendingUrl ,  createOpts("GET"  , {revalidate: 3600}))
     if(!res.ok) {
         throw new Error("Failed fetching trending movies")
