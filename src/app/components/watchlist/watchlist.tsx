@@ -29,9 +29,9 @@ export default async function Watchlist(){
                 {/* <div style={{display: "flex" , "justifyContent": "flex-end"}}></div> */}
                 <header>Your Watchlist</header>
             <div id={styles.listContainer}>
-                {results.map(movie => {
+                {results.map((movie , index) => {
                     return (
-                        <div className={styles.mediaCard} >
+                        <div className={styles.mediaCard} key={index}>
                             <Image
                             src={`https://www.themoviedb.org/t/p/original/${movie.poster_path}`}
                             alt={movie.title}
