@@ -41,7 +41,7 @@ export default async function Watchlist(){
                             />
                         </div>
                     )
-                }).slice(0 , 7)}   
+                }).slice(0 , 10)}  
              </div>
             </div>
         </div>
