@@ -16,9 +16,14 @@ const nextConfig = {
                 protocol: 'http',
                 hostname: "image.tmdb.org",
                 port: '',
+            },
+            {
+                protocol: 'http',
+                hostname: "pbs.twimg.com",
+                port: '',
             }
         ],
-        domains: ["www.themoviedb.org" , "img.clerk.com" , "image.tmdb.org"]
+        domains: ["www.themoviedb.org" , "img.clerk.com" , "image.tmdb.org" , "pbs.twimg.com"]
     }
 }
 

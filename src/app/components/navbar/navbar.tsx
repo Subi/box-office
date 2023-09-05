@@ -23,7 +23,7 @@ export default function NavBar() {
                 </Link>
                 {/* <SearchBar/> */}  
                 <div className={styles.register}>
-                    {!isSignedIn ? <LoggedOut/> : <LoggedIn image={user.imageUrl}/>}
+                    {!isSignedIn ? <LoggedOut/> : <LoggedIn user={String(user.username)} image={user.imageUrl}/>}
                 </div>
             </div>
         </nav>

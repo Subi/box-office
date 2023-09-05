@@ -1,0 +1,40 @@
+#watchlistContainer {
+    margin-top: 4em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sidebar {
+    width: 20%;
+}
+
+#watchlist {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#watchlist header {
+    font-size: 1.2em;
+}
+
+
+#listContainer {
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill,150px);
+    grid-template-rows: repeat(auto-fill,210px);
+    min-width: 0;
+    padding: 2em;
+
+}
+
+.mediaCard {
+    width: 145px;
+    height: 215px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+

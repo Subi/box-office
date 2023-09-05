@@ -16,6 +16,10 @@ import unfavorited from '../public/moviepage/icons8-heart-100.png'
 import playIcon  from '../public/moviepage/playbutton.png'
 import blankProfile from '../public/moviepage/blank_profile.png'
 
+
+/* user page */
+import fightclub from '../public/user/banner_fightclub.jpg'
+
 export {
     searchBarIcon,
     navLogo,
@@ -26,5 +30,6 @@ export {
     playIcon,
     downArrow,
     plusIcon,
-    blankProfile
+    blankProfile,
+    fightclub
 }

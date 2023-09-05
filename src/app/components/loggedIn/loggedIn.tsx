@@ -3,15 +3,16 @@ import Image from "next/image"
 import { downArrow , plusIcon} from "@/images"
 import styles from './loggedIn.module.css'
 import {useClerk} from '@clerk/clerk-react'
-import {WithUserProp} from '@clerk/clerk-react'
+import Link from "next/link"
 
 
 
 interface LoggedInProps {
     image: string
+    user: string
 }
 
-export default function LoggedIn({image}:LoggedInProps){
+export default function LoggedIn({image , user}:LoggedInProps){
     console.log("here")
     const {signOut} = useClerk()
     return (
@@ -34,7 +35,7 @@ export default function LoggedIn({image}:LoggedInProps){
             <div className={styles.userDropdownContainer}>
                 <div className={styles.dropdownUserContent}>
                     <a>Profile</a>
-                    <a>Watchlist</a>
+                    <Link href={`user/${user}/watchlist`}>Watchlist</Link>
                     <a>Settings</a>
                     <a onClick={() => signOut()}>Log out</a>
                 </div>
