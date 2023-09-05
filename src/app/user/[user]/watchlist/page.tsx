@@ -40,9 +40,9 @@ export default async function Page({params}:UserPageProps){
                         <span>negusdev</span>
                     </div>
                     <nav className={styles.navContainer}>
-                        {navigationLinks.map(link => { 
+                        {navigationLinks.map((link , index)=> { 
                             return (
-                                <Link href={link} className={isActive(link) ? `${styles.activeLink}` : ""}>{link}</Link>
+                                <Link href={link} key={index} className={isActive(link) ? `${styles.activeLink}` : ""}>{link}</Link>
                             )
                         })}
                 </nav>
