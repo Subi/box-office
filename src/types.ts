@@ -1,4 +1,4 @@
-export type Movie = {
+export type MovieData = {
     id: number
     adult: boolean
     backdrop_path: string
@@ -46,8 +46,6 @@ export type Movie = {
         results: videoResult[]
     } 
 }
-
-
 
 export interface Cast  {
     adult: false

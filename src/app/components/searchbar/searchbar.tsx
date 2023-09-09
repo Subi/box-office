@@ -14,7 +14,6 @@ interface SeachbarProps {
 export default function SearchBar({modalClosed}:SeachbarProps) {
     const [input , setInput] = useState<string>("")
     const [searchedResults , setSearchedResults] = useState<Movie[]>([])
-
     const debouncedSearch: string | undefined  = useDebounce(input , 150)
 
     const searchMovie = async (title:string) => {

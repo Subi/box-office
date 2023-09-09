@@ -4,6 +4,7 @@ import { downArrow , plusIcon} from "@/images"
 import styles from './loggedIn.module.css'
 import {useClerk} from '@clerk/clerk-react'
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 
 
@@ -13,7 +14,8 @@ interface LoggedInProps {
 }
 
 export default function LoggedIn({image , user}:LoggedInProps){
-    console.log("here")
+    const pathname = usePathname()
+    console.log(pathname)
     const {signOut} = useClerk()
     return (
         <div style={{display: "flex" , alignItems: "center" , width: "100%" , justifyContent: "right"}}>

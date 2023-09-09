@@ -1,48 +1,32 @@
+"use client"
 import styles from './watchlist.module.css'
-import { trendingUrl } from '@/constants'
-import { createOpts } from '@/app/util/helper'
-import { Movie } from '@/types'
+import TableView from './tableview'
 import Image from 'next/image'
+import { Entry } from '@prisma/client'
+import StandardView from './standardView'
+import { listViewIcon, standardViewIcon } from '@/images'
+import { useState } from 'react'
 
-type MovieResponse = {
-    page: number
-    results: Movie[]
+export type WatchlistProps =  {
+    watchlist:Entry[] | undefined
 }
 
-async function getDummyData():Promise<MovieResponse>{
-    const res = await fetch(trendingUrl ,  createOpts("GET"  , {revalidate: 3600}))
-    if(!res.ok) {
-        throw new Error("Failed fetching trending movies")
-    }
-    return res.json()
-
-}
-
-
-export default async function Watchlist(){
-    const {results}: {results:Movie[]} =  await getDummyData()
+export default function Watchlist({watchlist}:WatchlistProps){
+    const [currentView , setCurrentView] = useState<boolean>(true)
+        
     return (
         <>
         <div id={styles.watchlistContainer}>
             <div id={styles.sidebar}></div>
             <div id={styles.watchlist}>
-                {/* <div style={{display: "flex" , "justifyContent": "flex-end"}}></div> */}
-                <header>Your Watchlist</header>
-            <div id={styles.listContainer}>
-                {results.map((movie , index) => {
-                    return (
-                        <div className={styles.mediaCard} key={index}>
-                            <Image
-                            src={`https://www.themoviedb.org/t/p/original/${movie.poster_path}`}
-                            alt={movie.title}
-                            fill
-                            quality={100}
-                            style={{objectFit: "contain"}}
-                            />
-                        </div>
-                    )
-                }).slice(0 , 10)}  
-             </div>
+                <div className={styles.header}>
+                <header>Watchlist</header>
+                <div className={styles.viewActionContainer}>
+                    <Image className={styles.listViewIcon} src={listViewIcon} alt='list view icon' height={20} width={20} onClick={() => setCurrentView(false)}/>
+                    <Image src={standardViewIcon} alt='list view icon' height={20} width={20} onClick={() => setCurrentView(true)}/>
+                </div>
+                </div>
+            {currentView ? <StandardView watchlist={watchlist}/> : <TableView watchlist={watchlist}/> }
             </div>
         </div>
         </>

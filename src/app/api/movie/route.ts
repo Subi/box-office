@@ -1,7 +1,7 @@
 import { NextRequest , NextResponse } from "next/server";
 import { createOpts } from "@/app/util/helper";
 import { movieUrl } from "@/constants";
-import { Movie } from "@/types";
+import { MovieData } from "@/types";
 
 
 export async function GET(req:NextRequest , res:NextResponse ) {
@@ -13,6 +13,6 @@ export async function GET(req:NextRequest , res:NextResponse ) {
         console.error(`Error fetching movie details ${id} : ${response.status} : ${response.statusText}`)
         return NextResponse.json({"status": response.statusText , "code" : response.status})
     }
-    const data:Movie  = await response.json()
+    const data:MovieData  = await response.json()
     return NextResponse.json({success: 200 , data})
 }

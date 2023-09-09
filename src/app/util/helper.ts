@@ -9,7 +9,7 @@ export interface IOptions {
     next: NextFetchRequestConfig | undefined
 }
 
-export const createOpts = (method:string ,  nextConfig?: NextFetchRequestConfig):IOptions => {
+export const createOpts = (method:string , nextConfig?: NextFetchRequestConfig):IOptions => {
     return {
         "method": method,
         "headers": {
@@ -19,5 +19,4 @@ export const createOpts = (method:string ,  nextConfig?: NextFetchRequestConfig)
         next: nextConfig
     }
 }
-
 

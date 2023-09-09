@@ -1,6 +1,6 @@
-import { Movie } from '@/types';
+import { MovieData } from '@/types';
 import styles from './landingMovies.module.css'
-import MovieCard from '../movieCard/movieCard'
+import MovieCard from '../movie/movieCard'
 import { trendingUrl } from '@/constants';
 import { createOpts } from '@/app/util/helper';
 
@@ -15,7 +15,7 @@ async function  getTrendingMovies(){ // return type value here
 
 
 export default async function MoviesLanding(){
-    const {results}: {results:Movie[]} =  await getTrendingMovies()
+    const {results}: {results:MovieData[]} =  await getTrendingMovies()
 
     return (    
         <section id={styles.moviesLanding}>
