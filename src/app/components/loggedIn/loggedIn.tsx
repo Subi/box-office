@@ -14,8 +14,6 @@ interface LoggedInProps {
 }
 
 export default function LoggedIn({image , user}:LoggedInProps){
-    const pathname = usePathname()
-    console.log(pathname)
     const {signOut} = useClerk()
     return (
         <div style={{display: "flex" , alignItems: "center" , width: "100%" , justifyContent: "right"}}>
