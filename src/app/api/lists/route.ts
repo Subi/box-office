@@ -11,7 +11,10 @@ type PatchData = {
 
 export async function PATCH(req:NextRequest , res:NextResponse){
     const {username,data}:{username:string , email:string , data:PatchData} =  await req.json()
-    updateList(username , data)
+    if(await updateList(username , data)){
+        return NextResponse.json({success: 200})
+    }
+    return NextResponse.json({error: "Failed to update user list"})
 }
 
 export async function GET(req:NextRequest ,  res:NextResponse) {
@@ -19,15 +22,13 @@ export async function GET(req:NextRequest ,  res:NextResponse) {
     const username: string | null =  searchParams.get('username')
 }
 
-
-const updateList = async (username:string , data:PatchData) => {
+const updateList = async (username:string , data:PatchData):Promise<boolean> => {
     const user =  await prisma.user.findFirst({
         where: {
             username: username
         },
         include: {lists : { select : { id: true, title:true}}}
     })
-    
     if(user) {
         const watchlistId =  user.lists.find(list => list.title === "Watchlist")?.id
         const updatedList =  await prisma.list.update({
@@ -35,8 +36,12 @@ const updateList = async (username:string , data:PatchData) => {
             data: { entries: {create: [{name:data.title , poster_image:data.poster , id:data.id}]}
         }
         })
+        if(updatedList) {
+            return true
+        }
         //send notification on movie successfully being added
     }
+    return false
 }
 
 

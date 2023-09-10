@@ -9,7 +9,6 @@ import Link from 'next/link';
 import MovieContent from './movieContent';
 import { useRouter } from 'next/navigation';
 import { getMovieReleaseRating , formatRuntime , getCrew , getTrailerUrl , backdropImage} from '@/app/util/movie/helper'; 
-import { createOpts } from '@/app/util/helper';
 
 interface MovieComponent {
     data: MovieData,
@@ -112,7 +111,7 @@ export default function Movie({data , username, email}:MovieComponent){
          </div>
      </section>
      <div className={styles.backdropImageContainer}>
-         <img  alt={"backdrop image"} style={{backgroundImage: `url(${backdropImage(data.backdrop_path)})`}}/>
+         <img   style={{backgroundImage: `url(${backdropImage(data.backdrop_path)})`}}/>
      </div>
      <div className={styles.backdropMask}></div>
      <MovieContent casts={data.credits.cast}/>
