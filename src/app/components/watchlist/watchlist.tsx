@@ -17,7 +17,8 @@ export default function Watchlist({watchlist}:WatchlistProps){
     return (
         <>
         <div id={styles.watchlistContainer}>
-            <div id={styles.sidebar}></div>
+            <div id={styles.sidebar}>
+            </div>
             <div id={styles.watchlist}>
                 <div className={styles.header}>
                 <header>Watchlist</header>

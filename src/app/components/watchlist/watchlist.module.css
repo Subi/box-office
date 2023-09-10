@@ -1,20 +1,22 @@
 /* Watchlist Container */
 
 #watchlistContainer {
-    margin: 4em auto 3em auto ;
-    width: 100%;
+    margin: 2em auto 3em auto ;
+    width: 80%;
     display: flex;
+    justify-content: space-between;
 }
 
 #sidebar {
-    width: 10%;
+    width: 25%;
 }
 
 #watchlist {
-    width: 60%;
-    margin: 0 auto;
+    width: 65%;
+    margin: 0 auto 3em 0;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .header  {
@@ -42,14 +44,11 @@
     color: red;
 }
 
-
 /* Watchlist Container */
 
 
 
 /* Standard View */
-
-
 #standardViewContainer {
     width: 100%;
     display: grid;
@@ -64,11 +63,13 @@
     width: 100%;
     height: 210px;
     position: relative;
+    border-radius: .7em;
+    overflow: hidden;
 }
 
 /* Standard View */
 
-/*Table View*/
+/*Table View */
 
 #tableViewContainer {
     margin-top: 2em;
@@ -125,6 +126,18 @@
     width: 100%;
     align-items: center;
     padding-left: 1.2em;
+}
+
+.float {
+    display: none;
+    position: absolute;
+    left: -150px;
+    height: 200px;
+    width: 140px;
+}
+
+.listEntry:hover .float {
+    display: block;
 }
 
 .listEntry:hover {

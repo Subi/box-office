@@ -4,9 +4,6 @@ import { downArrow , plusIcon} from "@/images"
 import styles from './loggedIn.module.css'
 import {useClerk} from '@clerk/clerk-react'
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-
-
 
 interface LoggedInProps {
     image: string

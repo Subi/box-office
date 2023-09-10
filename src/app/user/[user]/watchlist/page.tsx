@@ -51,7 +51,8 @@ export default async function Page({params}:UserPageProps){
         <>
         <div id={styles.main}>
             <section id={styles.bannerContainer}>
-            <div className={styles.banner} style={{backgroundImage: `url("https://i0.wp.com/img.screencaps.us/200/8-dark-knight/full/darkknight-movie-screencaps.com-419.jpg?ssl")`}}  ></div>
+            <div className={styles.bannerMask}></div>
+            <div className={styles.banner} style={{backgroundImage: `url("https://s4.anilist.co/file/anilistcdn/user/banner/b548220-MZSu6uLRlpfh.jpg")`}}  ></div>
                 <div id={styles.bannerContent}>
                     <div className={styles.userImage}>
                         <Image src={String(user?.imageUrl)} fill alt='user image' style={{objectFit: "cover"}} quality={100}/>

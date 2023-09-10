@@ -16,6 +16,15 @@ export default function TableView({watchlist}:WatchlistProps) {
                 {!watchlist ? "" : watchlist.map((entry , index) => {
                     return (
                         <div className={styles.listEntry} key={index}>
+                              <div className={styles.float}>
+                                <Image
+                                   src={`https://www.themoviedb.org/t/p/original${entry.poster_image}`}
+                                   alt='movie cover'
+                                   fill
+                                   quality={100}
+                                   style={{objectFit: "contain" , objectPosition: "50%" , backgroundRepeat: "no-repeat"}}
+                                />
+                              </div>
                             <div className={styles.previewImage}>
                                 <Image 
                                 src={`https://www.themoviedb.org/t/p/original${entry.poster_image}`}

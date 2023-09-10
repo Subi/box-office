@@ -10,7 +10,6 @@ import LoggedOut from '../loggedOut/loggedOut';
 
 export default function NavBar() {
     const {isSignedIn , user} = useUser()
-
     return (
         <>
         <nav id={styles.navbar}>
