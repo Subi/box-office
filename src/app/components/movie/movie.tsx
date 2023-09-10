@@ -112,7 +112,7 @@ export default function Movie({data , username, email}:MovieComponent){
          </div>
      </section>
      <div className={styles.backdropImageContainer}>
-         <img style={{backgroundImage: `url(${backdropImage(data.backdrop_path)})`}}/>
+         <img  alt={"backdrop image"} style={{backgroundImage: `url(${backdropImage(data.backdrop_path)})`}}/>
      </div>
      <div className={styles.backdropMask}></div>
      <MovieContent casts={data.credits.cast}/>

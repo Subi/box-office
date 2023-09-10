@@ -37,8 +37,7 @@ async function getWatchlist(username:string):Promise<Entry[] | undefined> {
 
 export default async function Page({params}:UserPageProps){
     const user: User | null = await currentUser()
-    const username = user?.username as string
-    const watchlist:Entry[] | undefined   = await getWatchlist(username)
+    const watchlist:Entry[] | undefined   = await getWatchlist(params.user)
     
 
     const isActive = (link:string) => {
@@ -58,7 +57,7 @@ export default async function Page({params}:UserPageProps){
                         <Image src={String(user?.imageUrl)} fill alt='user image' style={{objectFit: "cover"}} quality={100}/>
                     </div>
                     <div className={styles.username}>
-                        <span>{username}</span>
+                        <span>{params.user}</span>
                     </div>
                 </div>
             </section>
@@ -68,7 +67,7 @@ export default async function Page({params}:UserPageProps){
                         <div className={styles.navbarLinks}>
                         {navigationLinks.map((link , index)=> { 
                             return (
-                                <div>
+                                <div key={index}>
                                     <Link href={link} key={index} className={isActive(link) ? `${styles.activeLink}` : ""}>{link}</Link>
                                 </div>
                                

@@ -1,10 +1,10 @@
-import { Movie } from '@/types'
+import { MovieData } from '@/types'
 import styles from './searchResults.module.css'
 import Image from "next/image"
 import Link from "next/link"
 
 export interface ISearchedResultsList {
-    movies: Movie[]
+    movies: MovieData[]
     modalClosed: boolean
 }
 
