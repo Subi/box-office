@@ -1,10 +1,10 @@
-import { Movie } from '@/types';
+import { MovieData } from '@/types';
 import Image from 'next/image';
 import styles from './movieCard.module.css';
 import Link from 'next/link';
 
 export interface MovieCardProps {
-    movie: Movie
+    movie: MovieData
 }
 
 export default function MovieCard({movie}:MovieCardProps) {

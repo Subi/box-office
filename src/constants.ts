@@ -19,6 +19,7 @@ const videoTypes = {
 const navigationLinks = [
     "overview",
     "watchlist",
+    "list",
     "favorites"
 ]
 

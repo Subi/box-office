@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev":  "next dev",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@clerk/clerk-react": "^4.24.0",
     "@clerk/nextjs": "^4.23.3",
+    "@prisma/client": "^5.2.0",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.18",
     "moment": "^2.29.4",
@@ -21,6 +24,11 @@
     "prettier": "^3.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "sharp": "^0.32.5",
+    "typescript": "5.1.6",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.2.0"
   }
 }

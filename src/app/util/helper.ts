@@ -1,3 +1,4 @@
+import { configDotenv } from "dotenv"
 import next from "next/types"
 
 export interface IOptions {
@@ -9,7 +10,7 @@ export interface IOptions {
     next: NextFetchRequestConfig | undefined
 }
 
-export const createOpts = (method:string ,  nextConfig?: NextFetchRequestConfig):IOptions => {
+export const createOpts = (method:string , nextConfig?: NextFetchRequestConfig):IOptions => {
     return {
         "method": method,
         "headers": {
@@ -19,5 +20,3 @@ export const createOpts = (method:string ,  nextConfig?: NextFetchRequestConfig)
         next: nextConfig
     }
 }
-
-
