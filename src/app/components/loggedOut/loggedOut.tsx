@@ -12,6 +12,5 @@ export default function LoggedOut(){
                 <button className={styles.login}>Login</button>
             </Link> 
         </div>
-        
     )
 }

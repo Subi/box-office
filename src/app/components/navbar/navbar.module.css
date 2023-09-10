@@ -3,7 +3,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 2em;
+    padding: .9em 0 ;
+    position: absolute;
+    z-index: 1;
 }
 
 .navContent {
@@ -21,7 +23,7 @@
 
 .logoName {
     padding: 0 .5em 0 0;
-    font-size: 1.5em;
+    font-size: 1.15em;
     font-weight: 300;
     color: #ffb525;
 }

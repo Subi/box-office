@@ -1,12 +1,13 @@
 /* Main layout for entire watchlist  */
 #main {
-    margin: 3em auto 0 auto;
+    margin: 0 auto 0 auto;
     width: 100%;
     height: 100%;
     font-family: var(--font-poppins);
 }
 
 #bannerContainer {
+    margin: 0 auto;
     width: 100%;
     height: 330px;
     display: flex;
@@ -14,8 +15,37 @@
 }
 
 
+#bannerContent {
+    height: 150px;
+    display: flex;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 20em;
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 25%;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerMask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(180deg,rgba(6,13,24 ,0) 40%,rgba(6,13,34 , .6));
+    top: 0;
+    left: 0;
+}
+
+
 #contentContainer {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -23,12 +53,12 @@
 
 .userContent {
     display: flex;
-    padding: 5em 0 .4em 0;
+    padding: 0 0 .5em 0;
 }
 
 .userImage {
-    width: 135px;
-    height: 135px;
+    width: 110px;
+    height: 110px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
@@ -37,12 +67,17 @@
 .username {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-left: 3em;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 0  0 2em 2em ;
 }
 
 .username span {
-    font-size: 1.1em;
+    color: rgb(237,241,245);
+    font-size: 1.3em;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: .5pt;
 }
 
 /* user content */
@@ -53,23 +88,24 @@
 
 .navContainer {
     display: flex;
-    margin-left: 5em;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    width: 35%
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+    padding: .8em 0 ;
+    background-color: rgba(114,117,166 ,  .1);
 }
 
-.navContainer ul {
-    list-style-type: none;
+.navbarLinks {
     display: flex;
     justify-content: space-between;
+    width: 30%;
+    text-transform: capitalize;
+    font-size: .8em;
+    letter-spacing: .8pt;
 }
 
-.activeLink::after {
-    content: "";
-    display: block;
-    width: 100%;
-    border-bottom: 1.5pt solid #FC4A78;
+.activeLink {
+    color: rgba(255, 181, 37 , 1)
 }
 
 /* nav content */

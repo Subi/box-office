@@ -20,6 +20,11 @@ import blankProfile from '../public/moviepage/blank_profile.png'
 /* user page */
 import fightclub from '../public/user/banner_fightclub.jpg'
 
+
+/* watchlist */
+import listViewIcon from '../public/user/list_icon.png'
+import standardViewIcon from '../public/user/standard_view_icon.png'
+
 export {
     searchBarIcon,
     navLogo,
@@ -31,5 +36,7 @@ export {
     downArrow,
     plusIcon,
     blankProfile,
-    fightclub
+    fightclub,
+    standardViewIcon,
+    listViewIcon
 }

@@ -5,15 +5,12 @@ import styles from './loggedIn.module.css'
 import {useClerk} from '@clerk/clerk-react'
 import Link from "next/link"
 
-
-
 interface LoggedInProps {
     image: string
     user: string
 }
 
 export default function LoggedIn({image , user}:LoggedInProps){
-    console.log("here")
     const {signOut} = useClerk()
     return (
         <div style={{display: "flex" , alignItems: "center" , width: "100%" , justifyContent: "right"}}>
