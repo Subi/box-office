@@ -1,7 +1,55 @@
-.content {
+.contentContainer{
     padding-top: 4em;
     font-family: var(--font-poppins);
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contentSidebar {
+    width: 23%;
+}
+
+.contentOverview {
+    display: flex;
+    flex-direction: column;
+    width: 74%;
+}
+
+.overviewNav {
+    display: flex;
+    margin-left: 2em;
+    width: 25%;
+}
+
+.overviewNav ul {
+    font-size: 1em;
+    letter-spacing: .2pt;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    list-style-type: none;
+}
+/* 
+.overviewNav ul li:hover::after { 
+    width: 100%;
+}
+
+.overviewNav ul li::after {
+    content: "";
+    display: block;
+    width: 0;
+    padding-top: 1px;
+    border-bottom: 3px solid #FC4A78;
+    transition: width .3s;
+} */
+
+.selected::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 2px;
+    border-bottom: 3px solid #FC4A78;
 }
 
 .contentTitle {
@@ -15,18 +63,15 @@
     content: "";
     display: block;
     width: 100%;
-    padding-top: 1px;
     border-bottom: 3px solid #FC4A78;
 }
 
-
-
 .contentScroller {
-    width: 97%;
-    margin: 0 auto;
+    width: 100%;
+    padding-top: 3em;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 14%;
+    grid-auto-columns: 18%;
     gap: var(--size-2);
     overflow-x: auto;
     overscroll-behavior-inline: contain;
@@ -40,21 +85,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 300px;
-    width: 225px;
 }
 
 .castCardAvatar {
-    height: 150px;
-    width: 150px;
+    height: 145px;
+    width: 145px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, .2);
     position: relative;
     overflow: hidden;
 }
 
+.castCardAvatar img {
+    height: 100%;
+    width: 100%;
+}
+
 .castInfo {
-    width: 80%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -68,12 +115,12 @@
 }
 
 .castInfo span:first-child {
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
 }
 
 .castInfo span:last-child{
     width: 80%;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 200 ;
 }

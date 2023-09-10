@@ -1,22 +1,27 @@
-import { Movie } from '@/app/api/movies/search/route'
+import { MovieData } from '@/types';
 import styles from './landingMovies.module.css'
-import MovieCard from '../movieCard/movieCard'
+import MovieCard from '../movie/movieCard'
+import { trendingUrl } from '@/constants';
+import { createOpts } from '@/app/util/helper';
 
-async function getTrendingMovies():Promise<Movie[]> {
-    const res =  await fetch("http://localhost:3000/api/movies/trending" , {method:"GET" , cache: 'no-cache'})
+
+async function  getTrendingMovies(){ // return type value here 
+    const res = await fetch(trendingUrl ,  createOpts("GET"  , {revalidate: 3600}))
     if(!res.ok) {
         throw new Error("Failed fetching trending movies")
     }
     return res.json()
 }
 
+
 export default async function MoviesLanding(){
-    const data:Movie[] =  await getTrendingMovies()
+    const {results}: {results:MovieData[]} =  await getTrendingMovies()
+
     return (    
         <section id={styles.moviesLanding}>
             <section className={styles.trendingSection}>
                 <div className={styles.trending}>
-                    {data.map((movie , index) => {
+                    {results.map((movie , index) => {
                         return (
                         <MovieCard movie={movie} key={index}/>
                         )}

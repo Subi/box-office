@@ -1,10 +1,11 @@
 #navbar {
-    /* background-color: #222227; */
     background-color: #14181c;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 2em;
+    padding: .9em 0 ;
+    position: absolute;
+    z-index: 1;
 }
 
 .navContent {
@@ -22,24 +23,14 @@
 
 .logoName {
     padding: 0 .5em 0 0;
-    font-size: 1.5em;
+    font-size: 1.15em;
     font-weight: 300;
     color: #ffb525;
 }
 
 .register {
-    width: 12%;
     display: flex;
     justify-content: space-between;
     align-items:center;
 }
 
-
-.waitlist {
-    background-color :rgba(255,181,37 , .9);
-    padding: .4em .8em;
-    color: whitesmoke;
-    border-radius: .2em;
-    font-weight: 200 bold;
-    letter-spacing: .2pt;
-}

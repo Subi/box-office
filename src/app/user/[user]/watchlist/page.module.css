@@ -1,0 +1,111 @@
+/* Main layout for entire watchlist  */
+#main {
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-poppins);
+}
+
+#bannerContainer {
+    margin: 0 auto;
+    width: 100%;
+    height: 330px;
+    display: flex;
+    position: relative;
+}
+
+
+#bannerContent {
+    height: 150px;
+    display: flex;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 20em;
+    display: flex;
+    align-items: center;
+}
+
+.banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 25%;
+    width: 100%;
+    height: 100%;
+}
+
+.bannerMask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: linear-gradient(180deg,rgba(6,13,24 ,0) 40%,rgba(6,13,34 , .6));
+    top: 0;
+    left: 0;
+}
+
+
+#contentContainer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* user content */
+
+.userContent {
+    display: flex;
+    padding: 0 0 .5em 0;
+}
+
+.userImage {
+    width: 110px;
+    height: 110px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.username {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    padding: 0  0 2em 2em ;
+}
+
+.username span {
+    color: rgb(237,241,245);
+    font-size: 1.3em;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: .5pt;
+}
+
+/* user content */
+
+ 
+
+/* nav content */
+
+.navContainer {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+    padding: .8em 0 ;
+    background-color: rgba(114,117,166 ,  .1);
+}
+
+.navbarLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    text-transform: capitalize;
+    font-size: .8em;
+    letter-spacing: .8pt;
+}
+
+.activeLink {
+    color: rgba(255, 181, 37 , 1)
+}
+
+/* nav content */

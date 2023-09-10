@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
@@ -11,7 +12,6 @@ const poppins = Poppins(
   }
 )
 
-
 export const metadata: Metadata = {
   title: 'Box Office',
   description: 'Share your love for films and discover new ones to love'
@@ -23,12 +23,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en" className={poppins.variable}>
       <body>
         <NavBar/>
           {children}
         </body>
     </html>
+    </ClerkProvider>
   )
   }
 

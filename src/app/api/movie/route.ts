@@ -1,18 +1,18 @@
 import { NextRequest , NextResponse } from "next/server";
-import { getMovieData } from "@/app/util/helper";
-import { Movie } from "../movies/search/route";
+import { createOpts } from "@/app/util/helper";
+import { movieUrl } from "@/constants";
+import { MovieData } from "@/types";
 
 
 export async function GET(req:NextRequest , res:NextResponse ) {
     const {searchParams} = new URL(req.url)
     const id = searchParams.get('id')
 
-    const response  = await getMovieData(id)
-
+    const response  = await fetch(`${movieUrl}/${id}?append_to_response=credits,release_dates,videos,images` , createOpts("GET"))
     if(response.status != 200) {
         console.error(`Error fetching movie details ${id} : ${response.status} : ${response.statusText}`)
         return NextResponse.json({"status": response.statusText , "code" : response.status})
     }
-    const data:Movie  = await response.json()
+    const data:MovieData  = await response.json()
     return NextResponse.json({success: 200 , data})
 }

@@ -1,0 +1,77 @@
+.watchListButton{
+    padding: .2em .8em
+}
+
+.watchListButton:hover {
+    background-color: rgba(255, 255, 255, .1)
+}
+
+.createListButton {
+    display: flex;
+    align-items: center;
+    padding: .2em 1.1em;
+    background-color: rgba(255,181,37 , .1);
+    border-radius: .2em;
+    letter-spacing: .5pt;
+    font-weight: bold;
+    font-size: .85em;
+    text-transform: uppercase;
+}
+
+
+.userAvatar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.userAvatar:hover::after {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 150px;
+    top: 25px;
+}
+
+
+.userDropdownContainer {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    width: 155px;
+    right: -5em;
+    top: 50px;
+    background-color: rgba(114,117,166 , .1);
+    border-radius: .4em;
+    transition: opacity .25s ease-in;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.userAvatar:hover .userDropdownContainer {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+
+
+
+.dropdownUserContent {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: .4em 0 ;
+}
+
+.dropdownUserContent a {
+    padding: .2em 0
+}
+
+.dropdownUserContent a:hover {
+    cursor: pointer;
+    color: rgba(255,181,37 , 1);
+}
+

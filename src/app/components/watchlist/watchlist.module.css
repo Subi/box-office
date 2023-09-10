@@ -1,0 +1,159 @@
+/* Watchlist Container */
+
+#watchlistContainer {
+    margin: 2em auto 3em auto ;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sidebar {
+    width: 25%;
+}
+
+#watchlist {
+    width: 65%;
+    margin: 0 auto 3em 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header  {
+    display: flex;
+    font-size: 1.1em;
+    justify-content: space-between;
+}
+
+.viewActionContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(114,117,166 ,  .1);
+    padding: 6px 8px;
+    min-width: 70px;
+    border-radius: .2em;
+    box-shadow: 0 2px 20px rgba(49,54,68,.09);
+    cursor: pointer;
+}
+
+.listViewIcon {
+    margin-right: .3em
+}
+
+.listViewIcon:hover {
+    color: red;
+}
+
+/* Watchlist Container */
+
+
+
+/* Standard View */
+#standardViewContainer {
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill,150px);
+    grid-template-rows: repeat(auto-fill,210px);
+    min-width: 0;
+    padding: 2em;
+}
+
+.mediaCard {
+    width: 100%;
+    height: 210px;
+    position: relative;
+    border-radius: .7em;
+    overflow: hidden;
+}
+
+/* Standard View */
+
+/*Table View */
+
+#tableViewContainer {
+    margin-top: 2em;
+    color: #D3D3DD;
+    width: 100%;
+    background-color: rgba(114,117,166 ,  .1);
+    border-radius: .3em;
+    box-shadow: 0 2px 20px rgba(49,54,68,.09)
+}
+
+
+.headerRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .2em 0 ;
+    font-size: .95em;
+    letter-spacing: .5pt;
+}
+
+
+.cover {
+    display: block;
+    padding: 0;
+    max-width: 60px;
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    flex: 5;
+    text-align: left;
+    padding: 20px;
+}
+
+.entryTitle {
+    flex: 5;
+    text-align: left;
+    padding: 15px 20px;
+}
+
+.type {
+    flex:1;
+    padding: 1.1em;
+}
+
+.tableEntries {
+    width: 100%;
+}
+
+.listEntry {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 1.2em;
+}
+
+.float {
+    display: none;
+    position: absolute;
+    left: -150px;
+    height: 200px;
+    width: 140px;
+}
+
+.listEntry:hover .float {
+    display: block;
+}
+
+.listEntry:hover {
+    background-color:  rgba(255, 181, 37 , .9)
+}
+
+.listEntry:hover > .previewImage {
+    opacity: 0;
+}
+
+
+.previewImage {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+
+/* Table View Component */

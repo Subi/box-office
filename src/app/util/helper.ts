@@ -1,27 +1,22 @@
-import { movieUrl } from "@/constants"
+import { configDotenv } from "dotenv"
+import next from "next/types"
 
 export interface IOptions {
     method: string
     headers: {
         accept:string
         authorization:string 
-    }
+    },
+    next: NextFetchRequestConfig | undefined
 }
 
-
-export const createOpts = (method:string):IOptions => {
+export const createOpts = (method:string , nextConfig?: NextFetchRequestConfig):IOptions => {
     return {
         "method": method,
         "headers": {
             "accept": 'application/json',
             "authorization": `Bearer ${process.env.ACCESS_TOKEN}`
-        }
+        },
+        next: nextConfig
     }
 }
-
-
-export const getMovieData = async (id:string | null):Promise<Response> => {
-    return await fetch(`${movieUrl}/${id}?append_to_response=credits,release_dates,videos` , createOpts("GET"))
-}
-
-
