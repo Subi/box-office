@@ -10,8 +10,8 @@ export default function StandardView({watchlist}:WatchlistProps){
         <div id={styles.standardViewContainer}>
         {!watchlist ? "" : watchlist.map((entry , index) => {
                 return (
-                    <Link href={`/movie/${entry.id}`}>
-                    <div className={styles.mediaCard} key={index}>
+                    <Link href={`/movie/${entry.id}`} key={index}>
+                    <div className={styles.mediaCard}>
                         <Image
                         src={`https://www.themoviedb.org/t/p/original${entry.poster_image}`}
                         alt={entry.name}
