@@ -1,5 +1,6 @@
 import styles from './watchlist.module.css'
 import { Entry } from '@prisma/client'
+import Link from 'next/link'
 import Image from 'next/image'
 import { WatchlistProps } from './watchlist'
 
@@ -25,6 +26,7 @@ export default function TableView({watchlist}:WatchlistProps) {
                                    style={{objectFit: "contain" , objectPosition: "50%" , backgroundRepeat: "no-repeat"}}
                                 />
                               </div>
+                              <Link href={`/movie/${entry.id}`}>
                             <div className={styles.previewImage}>
                                 <Image 
                                 src={`https://www.themoviedb.org/t/p/original${entry.poster_image}`}
@@ -34,6 +36,7 @@ export default function TableView({watchlist}:WatchlistProps) {
                                 style={{objectFit: "cover" , objectPosition: "50%" , backgroundRepeat: "no-repeat"}}
                                 />
                             </div>
+                            </Link>
                             <div className={styles.entryTitle}>{entry.name}</div>
                         </div>
                     )

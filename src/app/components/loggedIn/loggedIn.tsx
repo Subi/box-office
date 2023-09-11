@@ -32,7 +32,7 @@ export default function LoggedIn({image , user}:LoggedInProps){
             <div className={styles.userDropdownContainer}>
                 <div className={styles.dropdownUserContent}>
                     <a>Profile</a>
-                    <Link href={`user/${user}/watchlist`}>Watchlist</Link>
+                    <Link href={`/user/${user}/watchlist`}>Watchlist</Link>
                     <a>Settings</a>
                     <a onClick={() => signOut()}>Log out</a>
                 </div>
