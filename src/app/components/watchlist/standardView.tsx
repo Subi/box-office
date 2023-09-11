@@ -1,24 +1,27 @@
 import styles from './watchlist.module.css';
 import Image from 'next/image';
 import { WatchlistProps } from "./watchlist"
+import Link from 'next/link';
 
 
 
 export default function StandardView({watchlist}:WatchlistProps){
     return (
         <div id={styles.standardViewContainer}>
-        {!watchlist ? "" : watchlist.map((movie , index) => {
+        {!watchlist ? "" : watchlist.map((entry , index) => {
                 return (
+                    <Link href={`/movie/${entry.id}`}>
                     <div className={styles.mediaCard} key={index}>
                         <Image
-                        src={`https://www.themoviedb.org/t/p/original${movie.poster_image}`}
-                        alt={movie.name}
+                        src={`https://www.themoviedb.org/t/p/original${entry.poster_image}`}
+                        alt={entry.name}
                         fill
                         priority
                         quality={100}
                         style={{objectFit: "contain"}}
                         />
                     </div>
+                    </Link>
                 )
             })}  
         </div>
