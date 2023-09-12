@@ -12,7 +12,7 @@ interface SeachbarProps {
     setOverlay(value:boolean):void
 }
 
-export default function SearchBar({overlay , setOverlay}:SeachbarProps) {
+export default function SearchBar({overlay, setOverlay}:SeachbarProps) {
     const overlayRef:MutableRefObject<null | HTMLElement> = useRef(null)
     const [input , setInput] = useState<string>("")
     const [searchedResults , setSearchedResults] = useState<MovieData[]>([])
@@ -57,7 +57,7 @@ export default function SearchBar({overlay , setOverlay}:SeachbarProps) {
                 </span>
                 <input className={styles.searchBar} type='text' value={input} placeholder='Search for a movie' onChange={(e) => setInput(e.target.value)}/>
             </div>
-            <SearchedResults movies={searchedResults}/>
+            <SearchedResults movies={searchedResults} />
         </main>
     )
 

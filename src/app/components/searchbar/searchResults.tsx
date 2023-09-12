@@ -6,22 +6,25 @@ import Link from "next/link"
 import { threeDotIcon } from '@/images'
 import { useState } from 'react'
 import { addToList } from '@/app/util/helper'
+import { useUser } from '@clerk/clerk-react'
 
-export interface ISearchedResultsList {
+export interface SearchResultsProps{
     movies: MovieData[]
 }
 
-export default function SearchedResultsList({movies}:ISearchedResultsList) {
+export default function SearchedResults({movies}:SearchResultsProps) {
+    const {user} = useUser()
     const [resultIndex , setResultIndex] = useState<number | null>(null)
-
 
     if(movies.length < 1) {
         return ""
     }   
-    
+
     const updateHandler = (listName:string , movie:MovieData) => {
+        if(!user) return
+        const username = user.username as string
+        addToList(listName ,  username , movie)
         setResultIndex(null)
-        addToList(listName , movie)
     }
 
     return (
@@ -31,6 +34,7 @@ export default function SearchedResultsList({movies}:ISearchedResultsList) {
                 {movies.map((movie:MovieData , index:number) => {
                     return (
                         <div id={styles.resultItem} key={index}>
+                            
                             <div style={{display: "flex" , justifyContent: "space-between"}}>
                             <div className={styles.resultItemCover}>
                             <Image
@@ -40,17 +44,19 @@ export default function SearchedResultsList({movies}:ISearchedResultsList) {
                                 style={{objectFit:"contain" , objectPosition:"50% 25%"}}
                                 />
                             </div>
+                            <Link href={`/movie/${movie.id}`}>
                             <div className={styles.info}>
                                 <span className={styles.title}>{movie.title}</span>
                                 <span className={styles.release}>{movie.release_date.split("-")[0]}</span>
                             </div>
+                            </Link>
                             </div>
                             <div className={styles.itemMore} onClick={() => setResultIndex(index)}>
                                 <Image 
                                 src={threeDotIcon}
                                 alt='three dot icon'
                                 fill
-                                />-
+                                />
                             </div>
                             <div className={resultIndex != index ? styles.hide : styles.moreContainer}>
                                 <div onClick={() => {updateHandler("Watchlist" , movie)}}>

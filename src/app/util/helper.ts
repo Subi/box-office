@@ -23,9 +23,9 @@ export const createOpts = (method:string , nextConfig?: NextFetchRequestConfig):
 }
 
 
-export const addToList = async (list:string , movie:MovieData) => {
+export const addToList = async (list:string , username:string ,  movie:MovieData) => {
     const response =  await fetch('api/lists',{
         method: "PATCH",
-        body: JSON.stringify({"list":list, "data":movie})
+        body: JSON.stringify({"list":list,"username":username,"data":movie})
     })
 }

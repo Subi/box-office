@@ -4,8 +4,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 export async function PATCH(req:NextRequest , res:NextResponse){
-    const {username,data , listName}:{username:string , listName:string , data:MovieData} =  await req.json()
-    if(await updateList(username, listName , data)){
+    const {username ,data , list}:{username:string , list:string , data:MovieData} =  await req.json()
+    if(await updateList(username, list , data)){
         return NextResponse.json({success: 200})
     }
     return NextResponse.json({error: "Failed to update user list"})
