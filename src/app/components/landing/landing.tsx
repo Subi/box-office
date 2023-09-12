@@ -33,7 +33,7 @@ export default function Landing(){
             <section id={styles.mainContent}>
                 <h1>Curate a watchlist with your creativity, share how the experience made you feel & discover new experiences to share.</h1>
                 <span className={styles.quotes}> &quot;Theory Will Take You Only So Far.&quot; - Oppenheimer</span>
-                <SearchBar modalClosed={searchModalClosed}/>
+                {/* <SearchBar modalClosed={searchModalClosed}/> */}
             </section>
         </main>
     )

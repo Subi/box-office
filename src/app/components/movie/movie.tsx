@@ -25,7 +25,6 @@ export default function Movie({data , username, email}:MovieComponent){
             method: "PATCH",
             body: JSON.stringify({
                 "username": username,
-                "email": email,
                 "data": {
                     title: data.title,
                     poster: data.poster_path,
