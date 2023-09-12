@@ -5,8 +5,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { threeDotIcon } from '@/images'
 import { useState } from 'react'
-import { addToList } from '@/app/util/helper'
+import { addToList, notify } from '@/app/util/helper'
 import { useUser } from '@clerk/clerk-react'
+import { Toaster, toast } from 'react-hot-toast'
 
 export interface SearchResultsProps{
     movies: MovieData[]
@@ -23,7 +24,8 @@ export default function SearchedResults({movies}:SearchResultsProps) {
     const updateHandler = (listName:string , movie:MovieData) => {
         if(!user) return
         const username = user.username as string
-        addToList(listName ,  username , movie)
+        const success = addToList(listName ,  username , movie)
+        notify.promise(listName , success)
         setResultIndex(null)
     }
 
@@ -65,8 +67,20 @@ export default function SearchedResults({movies}:SearchResultsProps) {
                             </div>
                         </div>  
                     )
-                }).splice(0 , 3)}
+                }).splice(0 , 6)}
             </div>
+            <Toaster
+  toastOptions={{
+className: '',
+    style: {
+      border: '1px solid #FC4A78',
+      borderRadius: '.5em',
+      backgroundColor: "#14181c",
+      padding: '.4em .8em',
+      color: '#fff',
+    },
+  }}
+/>
         </div>
     )
 }

@@ -7,12 +7,14 @@ import Link from 'next/link';
 import { useUser } from '@clerk/nextjs';
 import LoggedIn from '../loggedIn/loggedIn';
 import { useState } from 'react';
+import { Toaster, toast } from 'react-hot-toast';
 
 
 
 export default function NavBar() {
     const {isSignedIn , user} = useUser()
     const [overlay , setOverlay] = useState<boolean>(false)
+
 
     return (
         <>
@@ -29,7 +31,7 @@ export default function NavBar() {
                 </Link>
             </div>
             <div id={styles.rightSide}>
-                <div id={styles.searchBarIcon} onClick={() => setOverlay(true)}>
+                <div id={styles.searchBarIcon} onClick={() => {setOverlay(true)}}>
                     <Image src={searchBarIcon} alt='searchbar icon' fill />
                 </div>
                 {isSignedIn  ? <LoggedIn imageUrl={user.imageUrl} username={user.username}/> : <div style={{display: "flex" , alignItems: "center"}}>
