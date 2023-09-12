@@ -39,3 +39,4 @@ export const notify = {
         return toast.promise(promise , {loading: "Adding" , success: `🍿 Added to ${list}` , error: `Error`} , {position: "top-right"})
     }
 }
+
