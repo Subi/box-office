@@ -7,7 +7,6 @@ import { prisma } from "@/lib/prisma";
 export async function POST(req:NextRequest , res:NextResponse){
     const {data} = await req.json()
     const {username , email_addresses}: {username:string , email_addresses: [{email_address:string}] } =  data
-    console.log(data)
     const email = email_addresses[0].email_address
     registerUser(username , email)
     // need to return json response to stop header error 

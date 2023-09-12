@@ -15,10 +15,10 @@ export default function LoggedIn({image , user}:LoggedInProps){
     return (
         <div style={{display: "flex" , alignItems: "center" , width: "100%" , justifyContent: "right"}}>
             <div style={{display: "flex"}}>
-            <div className={styles.createListButton}>
+            {/* <div className={styles.createListButton}>
                 <span style={{margin: ".1em .6em 0 0"}}>List</span>
                 <Image src={plusIcon} alt="plus_icon" height={16} width={16}/>
-            </div>
+            </div> */}
             </div>
             <div className={styles.userAvatar}>
             <Image 

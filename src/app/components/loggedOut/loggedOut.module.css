@@ -3,19 +3,8 @@
     margin-right: 4em;
 }
    
-.signup:hover::after {
-       width: 100%;
-}
-   
-.signup::after {
-       content: "";
-       width: 0;
-       display: block;
-       padding-top: .2em;
-       border-bottom: 2px solid rgba(255,181,37 , .9);
-       transition: width .2s ease-in-out
-}
-   
+ 
+
    
 .login {
        background-color: transparent;

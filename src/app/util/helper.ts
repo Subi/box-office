@@ -1,3 +1,4 @@
+import { MovieData } from "@/types"
 import { configDotenv } from "dotenv"
 import next from "next/types"
 
@@ -19,4 +20,12 @@ export const createOpts = (method:string , nextConfig?: NextFetchRequestConfig):
         },
         next: nextConfig
     }
+}
+
+
+export const addToList = async (list:string , movie:MovieData) => {
+    const response =  await fetch('api/lists',{
+        method: "PATCH",
+        body: JSON.stringify({"list":list, "data":movie})
+    })
 }
