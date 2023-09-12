@@ -1,41 +1,56 @@
-.searchBarContainer {
-    padding-top: 4em;
+#searchOverlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
     display: flex;
-    justify-content: center;
-    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchBarContainer {
+    width: 30%;
+    margin-top: 7em;
+    position: relative;
 }
 
 .searchBar {
-    width: 85%;
+    width: 100%;
     font-family: var(--font-poppins);
-    font-size: 1em;
+    font-size: .9em;
     font-weight: 300 bold;
     color: rgba(255, 255, 255, .9);;
-    text-indent: 2em;
-    border-radius: 2em;
-    padding: 1em 0;
-    background-color: #14181c;
-    border-radius: 2em;
-    border-image: linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
-    -webkit-border-image:  linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
-    -moz-border-image:  linear-gradient(119deg, #ffb525 0%, #7275a6 100%);
-    border-width: 1pt;
-    border-image-slice: 1;
+    text-indent: 2.5em;
+    padding: 1em;
+    border: none;
+    position: relative;
+    background-color: rgba(114,117,166 ,  .1);
+    border-radius: .3em;
+    box-shadow: 0 2px 20px rgba(49,54,68,.09)
 }
 
 .searchBar::placeholder {
     font-family: var(--font-poppins);
     color: rgba(255 , 255 , 255 , .5);
-    font-weight: 200; 
+    font-weight: 300; 
 }
+
+.searchBar:focus {
+    outline: none;
+}
+
 
 .searchBar:focus{
     outline: none;
 }
 
 .searchBarIcon {
-    position: relative;
-    right: 2.8em;
-    top: 1.3em;
+    top: 1em;
+    left: 1em;
+    position: absolute;
 }
 
+#hide {
+    display: none;
+}

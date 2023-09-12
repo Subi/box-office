@@ -1,19 +1,28 @@
 #navbar {
-    background-color: #14181c;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: .9em 0 ;
-    position: absolute;
-    z-index: 1;
-}
-
-.navContent {
-    width: 63%;
+    /* background-color: #14181c; */
+    width: 75%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 1.8em 0 ;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     font-family: var(--font-poppins);
+}
+
+/* Navbar left side */
+#leftSide {
+    display: flex;
+    padding-left: 5em;
+}
+
+.logo {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-right: 2em;
 }
 
 .logoContainer {
@@ -22,11 +31,47 @@
 }
 
 .logoName {
-    padding: 0 .5em 0 0;
-    font-size: 1.15em;
+    font-size: 1.3em;
     font-weight: 300;
     color: #ffb525;
 }
+
+/* Navbar left side */
+
+
+#rightSide {
+    display: flex;
+    align-items: center;
+    margin-right: 7.5em;
+}
+
+
+#searchBarIcon {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin-right: 2em;
+    cursor: pointer;
+}
+
+.login {
+    background-color: transparent;
+    color: whitesmoke;
+    font-weight: 300;
+    font-size: .9em;
+    letter-spacing: 1pt;
+    margin-right: 1.5em;
+}
+
+.signup {
+    all: unset;
+    background-color: rgba(255, 181, 37 , .9);
+    border-radius: .3em;
+    padding: .3em .5em;
+    font-size: .8em;
+    letter-spacing: .5pt;
+}
+
 
 .register {
     display: flex;

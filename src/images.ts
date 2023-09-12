@@ -1,5 +1,6 @@
 /* Searchbar */
-import searchBarIcon from '../public/searchbar/magnifying_glass.svg';
+import searchBarIcon from '../public/navbar/searchbar_icon.svg'
+import threeDotIcon from '../public/searchbar/3dot-icon.png';
 
 /* Navbar */
 import navLogo from '../public/navbar/navlogo.svg';
@@ -38,5 +39,6 @@ export {
     blankProfile,
     fightclub,
     standardViewIcon,
-    listViewIcon
+    listViewIcon,
+    threeDotIcon
 }
