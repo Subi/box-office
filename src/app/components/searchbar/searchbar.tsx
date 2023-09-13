@@ -13,7 +13,10 @@ interface SeachbarProps {
 }
 
 export default function SearchBar({overlay, setOverlay}:SeachbarProps) {
-    const overlayRef:MutableRefObject<null | HTMLElement> = useRef(null)
+    const overlayRef:MutableRefObject<HTMLElement | null> = useRef(null)
+    const inputRef:MutableRefObject<HTMLInputElement | null> =  useRef(null)
+
+
     const [input , setInput] = useState<string>("")
     const [searchedResults , setSearchedResults] = useState<MovieData[]>([])
     const debouncedSearch: string | undefined  = useDebounce(input , 150)
@@ -29,6 +32,13 @@ export default function SearchBar({overlay, setOverlay}:SeachbarProps) {
         setSearchedResults([])
         setInput("")
     }
+
+    useEffect(() => {
+        if(overlay){
+            inputRef.current?.focus()
+        }
+    } , [overlay])
+
 
     useEffect(() => {
         document.addEventListener('mousedown' , (e:MouseEvent) => {
@@ -47,15 +57,14 @@ export default function SearchBar({overlay, setOverlay}:SeachbarProps) {
 
     useEffect(() => {
     },[searchedResults])
-
-
+   
     return (
-        <main id={!overlay ? styles.hide :  styles.searchOverlay } ref={overlayRef}>
+        <main id={ !overlay ? styles.hide : styles.searchOverlay } ref={overlayRef}>
             <div id={styles.searchBarContainer}>
                 <span className={styles.searchBarIcon}>
                 <Image src={searchBarIcon} alt='search_icon' height={16} width={16}/>
                 </span>
-                <input className={styles.searchBar} type='text' value={input} placeholder='Search for a movie' onChange={(e) => setInput(e.target.value)}/>
+                <input ref={inputRef} autoFocus={true} className={styles.searchBar} type='text' value={input} placeholder='Search for a movie' onChange={(e) => setInput(e.target.value)}/>
             </div>
             <SearchedResults movies={searchedResults} />
         </main>
