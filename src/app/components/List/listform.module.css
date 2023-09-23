@@ -1,0 +1,193 @@
+#listForm {
+    display: flex;
+    font-family: var(--font-poppins);
+    padding-bottom: 5em;
+}
+
+#header {
+    font-size: 1.3em;
+    letter-spacing: .5pt;
+    padding-bottom: .8em;
+    border-bottom: 1px solid #ffb525;
+    font-family: var(--font-poppins);
+}
+
+
+#listFormContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 2em;
+}
+
+.fieldRow {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0
+}
+
+
+.label {
+    font-size: .85em;
+    letter-spacing: .5pt;
+}
+
+.listFormInput {
+    width: 75%;
+    border: 1px solid rgba(0, 0, 0, .5);
+    background-color: rgba(114,117,166 ,  .1);
+    border-radius: .3em;
+    box-shadow: 0 2px 20px rgba(49,54,68,.09);
+    padding: .5em 0;
+    font-family: var(--font-poppins);
+    text-indent: 1.2em;
+}
+
+.listFormInput::placeholder {
+    text-indent: 1em;
+    font-family: var(--font-poppins);
+    color: rgba(255 , 255 , 255 , .5);
+    font-weight: 300; 
+    text-transform: capitalize;
+}
+
+.listFormInput:focus {
+    outline: 1px solid #FC4A78;
+}
+
+.listFormInput textarea {
+    font-size: 1.2em;
+    letter-spacing: .5pt;
+    padding: 1em;
+}
+
+.listFormSubmit {
+    padding: .6em 1.2em;
+    background-color: #FC4A78;
+    border: none;
+    font-size: .9em;
+    border-radius: .1em;
+    letter-spacing: .4pt;
+
+}
+
+
+/*Search Container */
+
+#searchContainer {
+    flex: 1;
+    display: flex;
+}
+
+#searchBarContainer {
+    width: 90%;
+    padding: .5em 0  0 1.8em;
+}
+
+.searchBar {
+    width: 100%;
+    font-family: var(--font-poppins);
+    font-size: .9em;
+    font-weight: 300 bold;
+    color: rgba(255, 255, 255, .9);;
+    text-indent: 2.5em;
+    padding: .5em 0;
+    border: none;
+    position: relative;
+    background-color: rgba(114,117,166 ,  .1);
+    box-shadow: 0 2px 20px rgba(49,54,68,.09);
+    text-transform: capitalize;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    letter-spacing: .3pt;
+    border-radius: .3em;
+}
+
+.searchBar::placeholder {
+    font-family: var(--font-poppins);
+    color: rgba(255 , 255 , 255 , .5);
+    font-weight: 300; 
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+
+.searchBar:focus{
+    outline: none;
+}
+
+.searchBarIcon {
+    top: 2em;
+    left: .8em;
+    position: relative;
+}
+
+
+.searchDropdown {
+    position: relative;
+    width: 100%;
+    background-color: rgba(114,117,166 ,  .1);
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.searchDropdown::-webkit-scrollbar {
+    background-color: #14181c;
+}
+.searchDropdown::-webkit-scrollbar-thumb {
+    border-radius: .5em;
+    background-color: #FC4A78;
+}
+
+.resultItem {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 8px 5px;
+    align-items: center;
+}
+
+
+.resultItem:hover {
+    background-color:#ffb525;
+    cursor: pointer;
+}
+
+
+.resultCover {
+    height: 35px;
+    width: 40px;
+    position: relative;
+}
+
+/*Search Container */
+
+
+
+/*List Entries */
+
+#listEntriesContainer {
+    font-family: var(--font-poppins);
+    width: 95%;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill,120px);
+    grid-template-rows: repeat(auto-fill,180px);
+    min-width: 0;
+    padding: 1em;
+}
+
+
+.entry {
+    height: 180px;
+    width: 120px;
+    position: relative;
+}
+
+
+#emptyPlaceHolder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

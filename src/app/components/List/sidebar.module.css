@@ -1,0 +1,40 @@
+#listSidebar {
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    font-family: var(--font-poppins);
+    margin-right: 2em;
+}
+
+#header {
+    font-size: .9em;
+    letter-spacing: .5pt;
+    padding-bottom: 1em;
+}
+
+.createList {
+    cursor: pointer;
+    font-size: 1em;
+    padding-left: .5em;
+    margin-bottom: 2em;
+    border-radius: .3em;
+    border: 1px solid #ffb525;
+}
+
+
+.list{
+    width: 100%;
+    cursor: pointer;
+    border-radius: .3em;
+    padding:  .4em .8em;
+    font-size: .9em;
+    letter-spacing: .3pt;
+}
+
+
+.active {
+    background-color: rgba(114,117,166 ,  .1);
+}
+
+
+

@@ -13,24 +13,39 @@
     position: relative;
     font-family: var(--font-poppins);
 }
-  
-  #mainContent h1 {
-    font-weight: 300;
-    margin-bottom: 1.25em;
-    font-size: 1.8em;
-    width: 65%;
-    text-align: center;
-    letter-spacing: .15em;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .quotes {
-    background: linear-gradient(to bottom, #333333 0%, #EEEEEE 1%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 300;
-    font-style: italic;
-  }
+
+
+#landingHeader {
+  font-weight: 500;
+  font-size: 3em;
+  width: 80%;
+  letter-spacing: 1pt;
+  text-align: center;
+  padding-bottom: 1em;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landingButton {
+  font-family: var(--font-poppins);
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  border-radius: 4px;
+  font-size: 1.2em;
+  padding: .1em 1.5em;
+  letter-spacing: .2pt;
+  text-shadow: rgb(0 0 0 / 25%) 0px 3px 8px;
+  background: linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%);
+  transition: all 0.5s ease 0s;
+  text-transform: uppercase;
+}
+
+.landingButton:hover{
+  box-shadow: rgb(80 63 205 / 50%) 0px 1px 40px;
+  transition: all 0.1s ease 0s;
+}

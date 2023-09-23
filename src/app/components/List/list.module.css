@@ -1,0 +1,6 @@
+#listWrapper {
+    width: 60%;
+    margin: 3em auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
